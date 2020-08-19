@@ -5,13 +5,14 @@ using UnityEngine;
 public class Test_SimpleExplosionWithFMOD : MonoBehaviour
 {
     public GameObject fmodGO;
-    public FMODLocalParamaterSetter localSetter;
     
+    /// <summary>
+    /// This will be used to test both the sound with the emitter, that the one written separately
+    /// </summary>
     public void DisableAndEnableGO()
     {
         fmodGO.SetActive(false);
-        // changes the parameter if it was changed
-        localSetter.SetParameterValueByName();
+
         fmodGO.SetActive(true);
     }
 
