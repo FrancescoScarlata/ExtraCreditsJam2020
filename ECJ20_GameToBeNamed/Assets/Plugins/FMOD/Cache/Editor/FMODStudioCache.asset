@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/EventTest
   guid: b15ac0e2b29398458719118509b058d9
-  Banks:
-  - {fileID: 8280397800493895287}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -24,6 +23,41 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1712
+--- !u!114 &-8271611941717315717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EventTest/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: -12
+  Max: 12
+  Default: 0
+  Exists: 1
+--- !u!114 &-7163737818369967826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637334623454716212
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5117841266314064582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,6 +75,24 @@ MonoBehaviour:
   Max: 12
   Default: 0
   Exists: 0
+--- !u!114 &-4309326153938347791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Player.bank
+  SubDir: 
+  lastModified: 637334623454786149
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-3243488017295383690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,6 +108,24 @@ MonoBehaviour:
   Path: ../ECJ20_FmodProject/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637333721302545649
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-2817546143856789150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/TestBank.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/TestBank.bank
+  SubDir: 
+  lastModified: 637334614125064921
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -77,6 +147,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2535682940320575059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/UI.bank
+  SubDir: 
+  lastModified: 637334623455045999
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2291928157122530775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,12 +197,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../ECJ20_FmodProject/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637334586138045711
+  lastModified: 637334623454746187
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 832
+    Value: 1042
   Exists: 1
+--- !u!114 &-2252558020841549426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Player.bank
+  SubDir: 
+  lastModified: 637334614122296647
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-962597137532934439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +238,23 @@ MonoBehaviour:
   lastModified: 637334319766445936
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-494288700471375973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 1
 --- !u!114 &-383004769791851249
 MonoBehaviour:
@@ -182,17 +305,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -2287574741729777469}
-  - {fileID: 8213141293957396230}
-  - {fileID: 8280397800493895287}
+  - {fileID: -7163737818369967826}
+  - {fileID: -4309326153938347791}
+  - {fileID: 4633869619555510790}
+  - {fileID: -2535682940320575059}
   EditorEvents:
-  - {fileID: -8716369492747689053}
-  EditorParameters: []
+  - {fileID: 150272715137008872}
+  EditorParameters:
+  - {fileID: -494288700471375973}
   MasterBanks:
-  - {fileID: 8213141293957396230}
+  - {fileID: -7163737818369967826}
   StringsBanks:
   - {fileID: -2287574741729777469}
-  stringsBankWriteTime: 637334586138045711
+  stringsBankWriteTime: 637334623454746187
   cacheVersion: 3
+--- !u!114 &150272715137008872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tests/EventTest
+  m_EditorClassIdentifier: 
+  Path: event:/Tests/EventTest
+  guid: b15ac0e2b29398458719118509b058d9
+  Banks:
+  - {fileID: 4633869619555510790}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8271611941717315717}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1712
 --- !u!114 &349986980080389691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +379,76 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &1748185343900107805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637334614122236666
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &1761831575599516088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/UI.bank
+  SubDir: 
+  lastModified: 637334614125094900
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &3352969075674058406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EventTest/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: -12
+  Max: 12
+  Default: 0
+  Exists: 0
+--- !u!114 &3812466277225207624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &4607114308193405660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +467,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &4633869619555510790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/TestBank.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/TestBank.bank
+  SubDir: 
+  lastModified: 637334623455016027
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8213141293957396230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +502,7 @@ MonoBehaviour:
   lastModified: 637333724601511722
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &8280397800493895287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,4 +520,4 @@ MonoBehaviour:
   lastModified: 637334586138055723
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0

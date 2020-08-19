@@ -8,7 +8,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{44539b3c-3eee-4953-b765-8a01f5a4ec36}</destination>
+			<destination>{225651f9-7a47-4151-97bc-0fdfdd770880}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{8709be98-464e-46e6-8280-5717252ef858}</destination>
@@ -33,6 +33,7 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{a8c03839-7921-400e-bf4a-be5041b88eca}</destination>
+			<destination>{f353bd1e-cee2-454d-8b45-e1ec2d11fa8b}</destination>
 		</relationship>
 		<relationship name="banks">
 			<destination>{d9ec1ec5-7772-407a-897b-d4cd4c7ab305}</destination>
@@ -59,7 +60,7 @@
 			<destination>{0a598a8b-b99b-44b3-befe-4db581a56853}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{b398ddbd-3f01-4874-8fc1-753aa23d4a28}</destination>
+			<destination>{8ace8dd5-ab6d-4141-a5c3-e1ec1617facc}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{60a7ff64-2513-4a65-9211-7accb8caf54e}" />
@@ -80,6 +81,11 @@
 	<object class="ParameterProxy" id="{a8c03839-7921-400e-bf4a-be5041b88eca}">
 		<relationship name="preset">
 			<destination>{02f5862a-bac2-48e0-9406-76845a4e1f20}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterProxy" id="{f353bd1e-cee2-454d-8b45-e1ec2d11fa8b}">
+		<relationship name="preset">
+			<destination>{c20379bd-e25d-42f0-85d6-5b1eeb84d7c0}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{724e32a3-d7b7-48e6-8db2-ee41c2b5476c}">
