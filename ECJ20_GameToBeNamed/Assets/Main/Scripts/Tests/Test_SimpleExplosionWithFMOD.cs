@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class Test_SimpleExplosionWithFMOD : MonoBehaviour
 {
@@ -27,5 +28,10 @@ public class Test_SimpleExplosionWithFMOD : MonoBehaviour
         fmodGO.SetActive(true);
     }
 
+
+    public void OnReverbValueChanged(float value)
+    {
+        localSetter.SetReverbValue(value);
+    }
 
 }

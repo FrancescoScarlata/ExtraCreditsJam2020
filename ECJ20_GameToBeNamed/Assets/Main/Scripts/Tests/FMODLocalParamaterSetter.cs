@@ -18,9 +18,15 @@ public class FMODLocalParamaterSetter : MonoBehaviour
     //the string of the parameter inside the fmod project
     public string parameterName;
 
+    public string globalParaName;
+
     [SerializeField]
     [Range(-12, 12f)]
     private float parameterValue;
+
+    [SerializeField]
+    [Range(0,1f)]
+    private float globalParaValue;
 
     // Start is called before the first frame update
     void Start()
@@ -67,5 +73,18 @@ public class FMODLocalParamaterSetter : MonoBehaviour
     {
         parameterValue = Random.Range(-12, 12f);
     }
+
+    public void SetReverbValue(float value)
+    {
+        globalParaValue = value;
+        ChangeGlobalParameterByname();
+    }
+
+    public void ChangeGlobalParameterByname()
+    {
+        //This will change the global parameter. it is for all instances, so you don't call of a single instance
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName(globalParaName, globalParaValue);
+    }
+
 
 }
