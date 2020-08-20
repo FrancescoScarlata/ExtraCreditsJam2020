@@ -63,4 +63,9 @@ public class FMODLocalParamaterSetter : MonoBehaviour
         instance.setParameterByName(parameterName, parameterValue);
     }
 
+    public void SetRandomPitch()
+    {
+        parameterValue = Random.Range(-12, 12f);
+    }
+
 }
