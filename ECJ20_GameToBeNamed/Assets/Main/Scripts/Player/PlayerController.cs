@@ -15,6 +15,18 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Vector2 movement;
 
+    protected _Interactions interactible;
+
+    public static PlayerController instance;
+
+    private void Awake()
+    {
+        if(instance = null)
+        {
+            instance = this;
+        }
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,6 +47,8 @@ public class PlayerController : MonoBehaviour
         {
             sprRend.flipX = false;
         }
+
+
     }
 
     // Execute movement
@@ -43,5 +57,15 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
         // Could instead do rb.velocity for a bit of a ramp-up to speed, not sure which feels better?
+    }
+
+    public void InteractionEnter(_Interactions inter)
+    {
+
+    }
+
+    public void InteractionExit(_Interactions inter)
+    {
+
     }
 }
