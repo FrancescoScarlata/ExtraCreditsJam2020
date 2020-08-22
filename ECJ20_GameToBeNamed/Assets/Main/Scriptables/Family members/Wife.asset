@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e7dd57795177749a7d7e4149ba346e, type: 3}
+  m_Name: Wife
+  m_EditorClassIdentifier: 
+  memberOk: {fileID: 0}
+  memberInfected: {fileID: 0}
+  memberDead: {fileID: 0}
+  myID: 2
+  myState: 0
+  itemsICanAskFor:
+  - {fileID: 11400000, guid: 903bf4651a701bb4482d762a326179be, type: 2}
