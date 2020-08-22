@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{29374a15-e673-4f4f-87eb-1791ef93b523}">
+		<property name="assetPath">
+			<value>SFX/Menu_Back_Done.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.2487981859410433</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8eb6991f-b8a8-49a9-83a0-eb92ffc26bfa}</destination>
+		</relationship>
+	</object>
+</objects>

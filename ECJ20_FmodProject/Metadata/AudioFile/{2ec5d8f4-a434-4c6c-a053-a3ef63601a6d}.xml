@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{2ec5d8f4-a434-4c6c-a053-a3ef63601a6d}">
+		<property name="assetPath">
+			<value>SFX/Salt.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.3535625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8eb6991f-b8a8-49a9-83a0-eb92ffc26bfa}</destination>
+		</relationship>
+	</object>
+</objects>

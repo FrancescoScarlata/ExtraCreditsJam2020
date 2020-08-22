@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{b30bb890-3baa-4a63-a525-18617ea7228a}">
+		<property name="assetPath">
+			<value>Market Theme/Supermarket Theme - 120bpm T Solo1.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>38</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8eb6991f-b8a8-49a9-83a0-eb92ffc26bfa}</destination>
+		</relationship>
+	</object>
+</objects>
