@@ -19,8 +19,8 @@ public class Member : ScriptableObject
 
     public Item [] itemsICanAskFor; 
 
-    List<Item> itemsAskedThisRound;
-    List<Item> itemsAskedAndNotBought;
+    List<Item> itemsAskedThisRound= new List<Item>();
+    List<Item> itemsAskedAndNotBought= new List<Item>();
 
     
     /// <summary>
@@ -70,6 +70,20 @@ public class Member : ScriptableObject
     }
 
     /// <summary>
+    /// Method called from the P1 GM to get all the items to put in the supermarket list
+    /// </summary>
+    /// <returns></returns>
+    public List<Item> GetItemsToBuy()
+    {
+        List<Item> tmpList = new List<Item>();
+        foreach (Item item in itemsAskedThisRound)
+            tmpList.Add(item);
+        foreach (Item item in itemsAskedAndNotBought)
+            tmpList.Add(item);
+        return tmpList;
+    }
+
+    /// <summary>
     /// From the list of items bought, one by one will be checked if that item is in those lists and will remove from them
     /// </summary>
     /// <param name="itemBought"></param>
@@ -92,6 +106,9 @@ public class Member : ScriptableObject
         }
         Debug.LogWarning($"Error! The item {itemBought.myType} wasn't in neither of the 2 lists.");
     }
+
+
+    
 
 }
 
