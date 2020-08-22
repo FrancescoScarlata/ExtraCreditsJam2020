@@ -29,4 +29,6 @@ public enum ItemType
 	Soap,
 	Fish,
 	Fruit,
+	Chocolate,
+	Salt
 }
