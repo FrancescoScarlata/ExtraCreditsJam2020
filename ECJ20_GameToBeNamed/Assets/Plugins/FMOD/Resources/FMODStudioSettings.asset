@@ -79,6 +79,8 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Music
+  - Non_player
   - Player
   - TestBank
   - UI
