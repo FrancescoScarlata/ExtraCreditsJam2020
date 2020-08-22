@@ -21,9 +21,11 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        if(instance = null)
+        if(instance == null)
         {
             instance = this;
+
+            Debug.Log("Instance created.");
         }
     }
 
@@ -48,7 +50,10 @@ public class PlayerController : MonoBehaviour
             sprRend.flipX = false;
         }
 
-
+        if (Input.GetButtonDown("Interact") && interactible != null)
+        {
+            interactible.Interact();
+        }
     }
 
     // Execute movement
@@ -61,11 +66,15 @@ public class PlayerController : MonoBehaviour
 
     public void InteractionEnter(_Interactions inter)
     {
+        interactible = inter;
 
+        Debug.Log("Entered collision area " + inter);
     }
 
     public void InteractionExit(_Interactions inter)
     {
+        interactible = inter;
 
+        Debug.Log("Exited collision area " + inter);
     }
 }

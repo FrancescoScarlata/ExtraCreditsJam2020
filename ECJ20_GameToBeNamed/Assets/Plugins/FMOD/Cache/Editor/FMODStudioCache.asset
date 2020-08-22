@@ -1,5 +1,114 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8323710143871245846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Reverb
+  m_EditorClassIdentifier: 
+  Name: Reverb
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-6267068562860840968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637336900636983357
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1244
+  Exists: 1
+--- !u!114 &-6210971807271408117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Player.bank
+  SubDir: 
+  lastModified: 637335086424869608
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-4576148994277379062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637336900636953452
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-4136947116465877016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Non_player.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Non_player.bank
+  SubDir: 
+  lastModified: 637336900636973378
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-753480063775607890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/TestBank.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/TestBank.bank
+  SubDir: 
+  lastModified: 637336350769799781
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +121,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
-  EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  stringsBankWriteTime: 0
+  EditorBanks:
+  - {fileID: -6267068562860840968}
+  - {fileID: -4576148994277379062}
+  - {fileID: 4914612230395931758}
+  - {fileID: -4136947116465877016}
+  - {fileID: -6210971807271408117}
+  - {fileID: -753480063775607890}
+  - {fileID: 4373515667204500248}
+  EditorEvents:
+  - {fileID: 5649790544065804434}
+  EditorParameters:
+  - {fileID: -8323710143871245846}
+  MasterBanks:
+  - {fileID: -4576148994277379062}
+  StringsBanks:
+  - {fileID: -6267068562860840968}
+  stringsBankWriteTime: 637336900636983357
   cacheVersion: 3
+--- !u!114 &641164661495612982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EventTest/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: -12
+  Max: 12
+  Default: 0
+  Exists: 1
+--- !u!114 &4373515667204500248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/UI.bank
+  SubDir: 
+  lastModified: 637335086424875356
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4914612230395931758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Music.bank
+  SubDir: 
+  lastModified: 637336900636973378
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &5649790544065804434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tests/EventTest
+  m_EditorClassIdentifier: 
+  Path: event:/Tests/EventTest
+  guid: b15ac0e2b29398458719118509b058d9
+  Banks:
+  - {fileID: -753480063775607890}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 641164661495612982}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1712

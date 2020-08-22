@@ -13,7 +13,7 @@ public class SectionInteraction : _Interactions
     {
         // call the game manager to add my section item in the supermarket list
 
+        Debug.Log("Interaction is happening. Yay.");
     }
-
 
 }
