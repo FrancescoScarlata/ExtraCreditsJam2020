@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public int currDay;
     public int currPhase = 0;
     public bool hasPlayerGotInfectiousToday = false;
-    // public dayInfos;
+    public DayInfo [] dayInfos;
     //
 
 

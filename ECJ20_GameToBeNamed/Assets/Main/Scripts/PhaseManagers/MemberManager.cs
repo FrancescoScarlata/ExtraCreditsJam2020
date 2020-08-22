@@ -15,8 +15,9 @@ public class MemberManager : MonoBehaviour
     [Header("UI elements")]
     public Image memberImage;
     public GameObject listOfTheDay;
+    public Image[] itemIconsInDaily;
     public GameObject listOfPreviousItems;
-
+    public Image[] itemIconsInPrevious;
 
     /// <summary>
     /// Method called by the game manager during phase 1
@@ -27,14 +28,39 @@ public class MemberManager : MonoBehaviour
         myMember.AskItems(numOfItems);
 
         // show items inside the list of the day
-
+        ShowTodayListItems();
         // if the list of previous items is not empty, show the area with the previous items
+        // show items inside te list of previous Items
+        ShowPreviousListItems();
+    }
 
-        // show items insid te list of previous Items
+    /// <summary>
+    /// Method called to reset all the sprites and making them not enabled.
+    /// </summary>
+    public void ResetImages()
+    {
+        
+    }
+
+    /// <summary>
+    /// Method called to watch the daily items
+    /// </summary>
+    public void ShowTodayListItems()
+    {
 
     }
 
-   // during phase 3 some animation when the items are taken by the family?
-   //public void InizializePhase3Items
+
+    /// <summary>
+    /// Method called to watch the previous days items
+    /// </summary>
+    public void ShowPreviousListItems()
+    {
+
+    }
+
+
+    // during phase 3 some animation when the items are taken by the family?
+    //public void InizializePhase3Items
 
 }

@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public abstract class _PhaseManager : MonoBehaviour
 {
+
     /// <summary>
     /// Method to be called at the start of this phase
     /// </summary>
