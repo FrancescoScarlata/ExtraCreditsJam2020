@@ -13,6 +13,8 @@ public abstract class _Interactions : MonoBehaviour {
     // it will be just the button after
     public string messageToSayWhenInteracting;
 
+    public GameObject hintButtonInteraction;
+
     protected Collider2D coll;
 
     protected virtual void Start()
@@ -29,13 +31,21 @@ public abstract class _Interactions : MonoBehaviour {
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         // Add this element to the player controller so that it can be called
-        PlayerController.instance.InteractionEnter(this);    
+        PlayerController.instance.InteractionEnter(this);
+        if (hintButtonInteraction)
+        {
+            hintButtonInteraction.SetActive(true);
+        }
     }
 
     protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         //Delete this element from the player controller so that it can't be called outside
         PlayerController.instance.InteractionExit(this);
+        if (hintButtonInteraction)
+        {
+            hintButtonInteraction.SetActive(false);
+        }
     }
 
 }

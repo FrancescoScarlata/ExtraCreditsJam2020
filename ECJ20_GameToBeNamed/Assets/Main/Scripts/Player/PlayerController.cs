@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     protected _Interactions interactible;
 
+    protected List<_Interactions> interactiblesObjects = new List<_Interactions>(); 
+
     public static PlayerController instance;
 
     private void Awake()
@@ -66,15 +68,32 @@ public class PlayerController : MonoBehaviour
 
     public void InteractionEnter(_Interactions inter)
     {
-        interactible = inter;
+        interactiblesObjects.Add(inter);
 
-        Debug.Log("Entered collision area " + inter);
+        //Debug.Log("Entered collision area " + inter.name);
+        UpdateTheInteractibles();
     }
 
     public void InteractionExit(_Interactions inter)
     {
-        interactible = inter;
-
-        Debug.Log("Exited collision area " + inter);
+        interactiblesObjects.Remove(inter);
+        //Debug.Log("Exited collision area " + inter.name);
+        UpdateTheInteractibles();
     }
+
+
+    /// <summary>
+    /// Method called a new interactible item is added or removed
+    /// </summary>
+    protected void UpdateTheInteractibles()
+    {
+        if (interactiblesObjects.Count > 0)
+        {
+            interactible = interactiblesObjects[interactiblesObjects.Count - 1];
+        }
+        else
+            interactible = null;
+       
+    }
+
 }

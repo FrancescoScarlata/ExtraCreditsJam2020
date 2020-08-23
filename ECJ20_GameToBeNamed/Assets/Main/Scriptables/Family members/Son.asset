@@ -15,7 +15,7 @@ MonoBehaviour:
   memberOk: {fileID: 21300000, guid: 9ab5a99547cc9da418a641d7d17e7d11, type: 3}
   memberInfected: {fileID: 21300000, guid: 88ada7107b6093b40aa6683cec2d0bde, type: 3}
   memberDead: {fileID: 21300000, guid: 9da665940becd6e4cbf41705effe46bc, type: 3}
-  myID: 3
+  myID: 2
   myState: 0
   itemsICanAskFor:
   - {fileID: 11400000, guid: faf473970b701424bbe19c51e471d23c, type: 2}

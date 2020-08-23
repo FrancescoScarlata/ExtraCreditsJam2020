@@ -60,8 +60,13 @@ public class PhaseManager3_DayResults : _PhaseManager
         // divides the items per each member.
         foreach(ItemInSMList item in smList.GetGeneralList())
         {
-            if(item.hasBeenPickedUp)
+            if (item.hasBeenPickedUp)
+            {
+                //Debug.Log($" memberasking: {(int)item.memberAsking}");
+                //Debug.Log($" List: {itemsPerMember[(int)item.memberAsking]}");
                 itemsPerMember[(int)item.memberAsking].Add(item.itemInfo);
+            }
+               
 
         }
 

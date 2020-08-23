@@ -26,8 +26,13 @@ public class MarketListUIManager : MonoBehaviour
         marketList = mList;
         generalList = mList.GetGeneralList();
         int[] itemsAmount = new int[12];
+        // initialize the values to 0
+        for (int i = 0; i < itemsAmount.Length; i++)
+        {
+           itemsAmount[i]=0;
+        }
         // calculate te amount
-        foreach(ItemInSMList item in generalList)
+        foreach (ItemInSMList item in generalList)
         {
             itemsAmount[(int)item.itemInfo.myType]++;
         }
@@ -44,7 +49,7 @@ public class MarketListUIManager : MonoBehaviour
     private void OnEnable()
     {
         //just for now, this should be called by the phase 2 manager
-        InitializeMarketList(GameManager.instance.sMList);
+        //InitializeMarketList(GameManager.instance.sMList);
     }
 
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,9 +14,9 @@ public class PhaseManager1_PreShopping : _PhaseManager
     [Header("GameObject of the button to show when the journal is on")]
     public GameObject nextButton;
     // -> to describe this better and write there, but for now it's ok i guess
-    public GameObject dateObjects;
+    public TextMeshProUGUI dateText;
     public GameObject journalElements; // elements that should be a go that has inside the journal etc
-
+    public Image newspaperImage;
     [Header("The UI elements")]
     public MemberManager[] familyMembers;
     public Button maskButton;
@@ -49,9 +50,11 @@ public class PhaseManager1_PreShopping : _PhaseManager
     {
         nextButton.SetActive(false);
         journalElements.SetActive(false);
+        newspaperImage.sprite = thisDayInfos.newsPaperOfTheDay;
         // this will start the members showed and the other UI one piece at the time
         StartCoroutine(StartPhase1AfterJournal());
     }
+
 
     /// <summary>
     /// Method called by the button to take or not take the mask.
@@ -113,7 +116,8 @@ public class PhaseManager1_PreShopping : _PhaseManager
         yield return null;
 
         // add the date in place -> after maybe with an animation
-        dateObjects.SetActive(true);
+        dateText.gameObject.SetActive(true);
+        dateText.text = thisDayInfos.currentDateToShow;
         yield return new WaitForSeconds(1);
 
         //reset all the MemberManagerUI
@@ -140,7 +144,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
                 {
                     familyMembers[i].gameObject.SetActive(true);
                     familyMembers[i].ShowPreviousListItems();
-                    yield return new WaitForSeconds(1f);
+                    yield return new WaitForSeconds(0.7f);
                 }
             }
             
@@ -149,7 +153,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
         // show the buttons
         maskButton.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
 
         shopButton.gameObject.SetActive(true);
 
@@ -161,19 +165,23 @@ public class PhaseManager1_PreShopping : _PhaseManager
     IEnumerator EndPhaseWithPauses()
     {
         UIManager.instance.FadeOut();
+        foreach (MemberManager member in familyMembers)
+        {
+            GameManager.instance.sMList.AddMemberItems(member.myMember.GetItemsToBuy(), member.myMember.myID);
+        }
         yield return new WaitForSeconds(1.5f);
         // Fade should be called from the game manager
        
         thisPhaseRoot.SetActive(false);
 
-        dateObjects.SetActive(false);
+        dateText.gameObject.SetActive(false);
         maskButton.gameObject.SetActive(false);
         shopButton.gameObject.SetActive(false);
 
         // populates the supermarket List
         foreach (MemberManager member in familyMembers)
         {
-            GameManager.instance.sMList.AddMemberItems(member.myMember.GetItemsToBuy(), member.myMember.myID);
+            member.gameObject.SetActive(false);
         }
         Debug.Log("Family lists added in the supermarketList");
     }

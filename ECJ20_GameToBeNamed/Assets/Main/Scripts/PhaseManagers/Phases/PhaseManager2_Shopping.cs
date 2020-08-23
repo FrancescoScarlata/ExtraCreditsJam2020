@@ -14,6 +14,10 @@ public class PhaseManager2_Shopping : _PhaseManager
 
     protected DayInfo thisDayInfos;
 
+    public Transform player;
+
+    public Transform entranceTransform;
+
     WaitForSeconds waitASec = new WaitForSeconds(1);
 
     public override void StartPhase()
@@ -27,15 +31,18 @@ public class PhaseManager2_Shopping : _PhaseManager
         thisPhaseRoot.SetActive(true);
         thisDayInfos = GameManager.instance.dayInfos[GameManager.instance.currDay];
         // initialize the supermarket UI list
-        GameManager.instance.mListUIMan.InitializeMarketList(GameManager.instance.sMList);
+      
 
         GameManager.instance.sMMan.RestockTheSections(thisDayInfos.sectionsToRestock);
         GameManager.instance.sMMan.SetSectionsPromos(thisDayInfos.sectionsWithPromos);
 
+        player.position = entranceTransform.position;
+
         //Initialize the People with the positioning etc -> TO DO the AI director etc
 
         UIManager.instance.FadeIn();
-        yield return new WaitForSeconds(1.5f);
+        GameManager.instance.mListUIMan.InitializeMarketList(GameManager.instance.sMList);
+        yield return new WaitForSeconds(1.2f);
 
         if (thisDayInfos.isTimerOn)
         {
