@@ -131,7 +131,6 @@ public class Member : ScriptableObject
 public enum FamilyID
 {
     mother,
-    father,
     wife,
     son,
     daughter

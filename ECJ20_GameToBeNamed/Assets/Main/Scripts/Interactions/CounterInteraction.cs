@@ -7,16 +7,29 @@ using UnityEngine;
 /// </summary>
 public class CounterInteraction : _Interactions
 {
+    protected bool isInteractible = true;
+    protected WaitForSeconds wait = new WaitForSeconds(2);
     /// <summary>
     /// Method called to finish the phase
     /// </summary>
     public override void Interact()
     {
         Debug.Log("End phase!");
-
-        // this will stop the phase, make a fade and then call the next phase [to do]
-        //GameManager.instance.NextPhase();
+        if (isInteractible)
+        {
+            StartCoroutine(Wait2Secs());
+            // this will stop the phase, make a fade and then call the next phase [to do]
+            GameManager.instance.NextPhase();
+        }
+       
     }
 
+    // blocks the inteaction for 2 secs
+    IEnumerator Wait2Secs()
+    {
+        isInteractible = false;
+        yield return wait;
+        isInteractible = true;
+    }
 
 }

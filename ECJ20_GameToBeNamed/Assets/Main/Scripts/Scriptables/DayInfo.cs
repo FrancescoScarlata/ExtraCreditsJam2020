@@ -12,7 +12,9 @@ public class DayInfo : ScriptableObject
 
     [Header("Phase 1 parameters")]
 
-    public DateTime currentDateToShow; // if necessary
+    public string currentDateToShow; // if necessary
+
+    public Sprite newsPaperOfTheDay;
 
     //public int numberOFamilyfMembers;
     public bool[] memberActive = new bool[4]; // probably just 4 to be in the same side i guess

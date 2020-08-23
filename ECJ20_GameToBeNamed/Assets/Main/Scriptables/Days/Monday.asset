@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dab84191e32ccf4a9a74a967d2e66e2, type: 3}
   m_Name: Monday
   m_EditorClassIdentifier: 
+  currentDateToShow: Oct 13th
+  newsPaperOfTheDay: {fileID: 21300000, guid: 76e96ddef64d44b4f86be3239150c4c8, type: 3}
   memberActive: 01000000
   minNumOfItemsAsked: 3
   maxNumOfItemsAsked: 3
