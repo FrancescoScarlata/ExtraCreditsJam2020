@@ -18,4 +18,11 @@ public class PhaseManager3_DayResults : _PhaseManager
         throw new System.NotImplementedException();
     }
 
+
+
+    public void TestResetSupermarketList()
+    {
+        GameManager.instance.sMList.ClearListEndDay();
+    }
+
 }

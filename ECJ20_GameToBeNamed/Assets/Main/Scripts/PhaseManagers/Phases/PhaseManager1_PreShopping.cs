@@ -99,7 +99,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
         {
             GameManager.instance.sMList.AddMemberItems(member.myMember.GetItemsToBuy(), member.myMember.myID);
         }
-        
+        Debug.Log("Family lists added in the supermarketList");   
     }
 
     /// <summary>

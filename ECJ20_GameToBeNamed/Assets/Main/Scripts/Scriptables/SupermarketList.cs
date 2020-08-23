@@ -52,6 +52,7 @@ public class SupermarketList : ScriptableObject
         }
 		// if it reaches here, it means that the item was not asked. Therefore, it goes in the wrong list
 		wrongListItems.Add(itemPicked);
+		//Debug.Log("Picked up and put it in the wrong list.");
 		numOfItemTaken++;
 		// check in the ui if this is the first item in the wrong list, to show the different list area
 		return -wrongListItems.Count;
@@ -77,6 +78,7 @@ public class SupermarketList : ScriptableObject
 	/// <returns></returns>
 	public Item GetItemFromWrongAt(int itemIndex)
     {
+		//Debug.Log($"[SML] the wrong item is: {wrongListItems[itemIndex]}");
 		return wrongListItems[itemIndex];
     }
 
