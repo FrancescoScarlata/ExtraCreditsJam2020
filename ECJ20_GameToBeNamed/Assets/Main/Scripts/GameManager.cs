@@ -61,9 +61,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void NextPhase()
     {
-        // the next phase will open after a fade in/out
-        
-        // next phase called
+        StartCoroutine(NextPhaseWithPauses());
+       
+
     }
 
 
@@ -79,28 +79,13 @@ public class GameManager : MonoBehaviour
             resultPickUp= sMList.PickUpItem(newItem);
             //update the supermarket UI list in some way
             if (resultPickUp > 0)
-                mListUIMan.UpdateUIList(UpdateType.addInCorrect, resultPickUp);
-            else
-                mListUIMan.UpdateUIList(UpdateType.addInWrong, -resultPickUp);
+                mListUIMan.UpdateUIList(newItem.myType);
         }
         else
         {
             // feedback that not item pick up
             
         }
-    }
-
-    /// <summary>
-    /// Method called from the SupermarketUI manager when a item is removed
-    /// </summary>
-    /// <param name="itemToRemove"></param>
-    public void RemoveItem(int index)
-    {
-        Item itemRemoved = sMList.GetItemFromWrongAt(index);
-        sMList.RemoveItem(index);
-        sMMan.TakeBackItem(itemRemoved.myType);
-        // update the supermarket list UI
-        mListUIMan.UpdateUIList(UpdateType.removeFromWrong, index);
     }
 
     /// <summary>
@@ -133,5 +118,29 @@ public class GameManager : MonoBehaviour
     }
 
     
-
+    protected IEnumerator NextPhaseWithPauses()
+    {
+        // the next phase will open after a fade in/out
+        phases[currPhase].EndPhase();
+       
+        yield return new WaitForSeconds(1.2f);
+        // next phase called
+        currPhase = (currPhase + 1) % phases.Length;
+        if (currPhase == 0)
+        {
+            if (currDay < dayInfos.Length)
+            {
+                currDay++;
+                phases[currPhase].StartPhase();
+            }    
+            else
+            {
+                // finish game / ending scene
+            }
+        }
+        else
+        {
+            phases[currPhase].StartPhase();
+        }
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 /// <summary>
 /// Class that is responsible for the wrong button behavious
+/// [DEPRECATED]
 /// </summary>
 public class WrongButtonManager : MonoBehaviour
 {
@@ -46,15 +47,6 @@ public class WrongButtonManager : MonoBehaviour
     public void UpdateMyIdex(int index)
     {
         myIndex = index;
-    }
-
-
-    /// <summary>
-    /// Method called by the button clicked to say that the button ha being clicked
-    /// </summary>
-    public void RemoveItemFromList()
-    {
-        GameManager.instance.RemoveItem(myIndex);
     }
 
 

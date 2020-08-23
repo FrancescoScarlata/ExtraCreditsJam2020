@@ -43,7 +43,9 @@ public class SectionManager : MonoBehaviour
         {
             // calls the game manager supermarketList to add the item
             numOfItemRemaning--;
-            spritesShown[numOfItemRemaning].SetActive(false);
+            
+            //spritesShown[numOfItemRemaning].SetActive(false);      TO DO when we have the items
+
             // some animation here on the item taken
             return myItem;
         }
@@ -56,7 +58,7 @@ public class SectionManager : MonoBehaviour
     /// </summary>
     public void PlaceBackItem()
     {
-        spritesShown[numOfItemRemaning].SetActive(true);
+        // spritesShown[numOfItemRemaning].SetActive(true);    TO DO when we have the items
         numOfItemRemaning++;    
     }
 

@@ -9,8 +9,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "generalList", menuName = "Infos/SMList", order = 1)]
 public class SupermarketList : ScriptableObject
 {
-	List<ItemInSMList> generalListItems= new List<ItemInSMList>();
-	List<Item> wrongListItems= new List<Item>();
+	[SerializeField]  List<ItemInSMList> generalListItems= new List<ItemInSMList>();
 
 	[Header("Curr Number of items taken during phase 2")]
 	public int numOfItemTaken;
@@ -47,41 +46,14 @@ public class SupermarketList : ScriptableObject
 				generalListItems[i].hasBeenPickedUp = true;
 
 				numOfItemTaken++; // so that the updates know the curr amount
-				return i;
+				return (int)itemPicked.myType;
             }
         }
-		// if it reaches here, it means that the item was not asked. Therefore, it goes in the wrong list
-		wrongListItems.Add(itemPicked);
-		//Debug.Log("Picked up and put it in the wrong list.");
-		numOfItemTaken++;
-		// check in the ui if this is the first item in the wrong list, to show the different list area
-		return -wrongListItems.Count;
+
+		GameManager.instance.sMMan.TakeBackItem(itemPicked.myType);
+		return -1;
     }
 	
-	/// <summary>
-	/// Method called from the UI when an Item is removed from 
-	/// </summary>
-	/// <param name="item"></param>
-	public void RemoveItem(int itemIndex)
-    {
-		wrongListItems.RemoveAt(itemIndex);
-		numOfItemTaken--;
-
-		// update num of items curr taken
-
-    }
-
-	/// <summary>
-	/// Gets the item needed at a specific index
-	/// </summary>
-	/// <param name="itemIndex"></param>
-	/// <returns></returns>
-	public Item GetItemFromWrongAt(int itemIndex)
-    {
-		//Debug.Log($"[SML] the wrong item is: {wrongListItems[itemIndex]}");
-		return wrongListItems[itemIndex];
-    }
-
 
 	/// <summary>
 	/// Method called during phase 3 to get all the bought items.
@@ -104,7 +76,6 @@ public class SupermarketList : ScriptableObject
 	public void ClearListEndDay()
     {
 		generalListItems.Clear();
-		wrongListItems.Clear();
 		numOfItemTaken = 0;
     }
 
@@ -121,6 +92,7 @@ public class SupermarketList : ScriptableObject
 /// <summary>
 /// Class with the info about the Item in the general info list
 /// </summary>
+[System.Serializable]
 public class ItemInSMList
 {
 	public Item itemInfo;

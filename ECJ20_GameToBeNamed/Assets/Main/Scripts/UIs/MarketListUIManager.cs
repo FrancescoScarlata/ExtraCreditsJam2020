@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Security;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +11,9 @@ using UnityEngine.UI;
 public class MarketListUIManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public List<Image> listOfCorrectItemsToBuy;
-    
-    public GameObject listOfWrongItemsGO;
-    public List<WrongButtonManager> listOfWrongItems;
+    public ItemIconWIthAmountManager [] correctItems; // 12 items
 
-    public Text remainingAndTotalText;
+    public TextMeshProUGUI remainingAndTotalText;
 
     protected SupermarketList marketList;
     List<ItemInSMList> generalList;
@@ -26,26 +24,21 @@ public class MarketListUIManager : MonoBehaviour
     public void InitializeMarketList(SupermarketList mList)
     {
         marketList = mList;
-        // reset each item in the list of correct items by disabling each image.
-        foreach(Image im in listOfCorrectItemsToBuy)
-        {
-            im.enabled = false;
-        }
-
-        //disable the listOfWrongItemsGO
-        listOfWrongItemsGO.SetActive(false);
-        // and reset the wrong items buttons (they can be clicked, so they need to be buttons)
-
-
         generalList = mList.GetGeneralList();
-
-        // for each element in the market list, insert the not active state of the icon
-        for(int i=0; i<generalList.Count; i++)
+        int[] itemsAmount = new int[12];
+        // calculate te amount
+        foreach(ItemInSMList item in generalList)
         {
-            listOfCorrectItemsToBuy[i].sprite = generalList[i].itemInfo.notActiveIcon;
-            listOfCorrectItemsToBuy[i].enabled = true;
+            itemsAmount[(int)item.itemInfo.myType]++;
         }
 
+        for(int i=0; i<correctItems.Length; i++)
+        {
+            correctItems[i].InitializeMe(itemsAmount[i]);
+        }
+
+        // update the Text with the taken / Total
+        remainingAndTotalText.text = $" {marketList.numOfItemTaken} of {generalList.Count}";
     }
 
     private void OnEnable()
@@ -59,75 +52,18 @@ public class MarketListUIManager : MonoBehaviour
     /// Method called to have an UI update when an item is changed (on both addiction and removal)
     /// </summary>
     /// <param name="marketList"></param>
-    public void UpdateUIList(UpdateType typeOfUpdate, int index) //we can have a enum for the type of operation and an index
+    public void UpdateUIList(ItemType itemTypeAdded) //we can have a enum for the type of operation and an index
     {
+        //TO CHANGE
         if (marketList == null)
             InitializeMarketList(GameManager.instance.sMList);
-        switch (typeOfUpdate)
-        {
-            case UpdateType.addInCorrect:
-                // in the index, change from not active to active
-                listOfCorrectItemsToBuy[index].sprite = generalList[index].itemInfo.activeIcon;
-                // some particle effect on the position of the icon might be cool to give a feedback
-                break;
 
-            case UpdateType.addInWrong:
-                if (index == 1) 
-                {
-                    // first item, we need to activate the list of wrong item GO
-                    listOfWrongItemsGO.SetActive(true);
-                }
-
-                // update the button in the index position-1 with the new infos
-                listOfWrongItems[index - 1].InititializeTheButton(marketList.GetItemFromWrongAt(index - 1), index - 1); // to test out
-                Debug.Log($"[POST] The last add in the list is: {listOfWrongItems[index - 1].GetThisItem().name} in index {index - 1}");
-                // some particle effect on the position of the icon might be cool to give a feedback
-
-                break;
-
-            case UpdateType.removeFromWrong:
-
-                // update the button in the index position by disabling it and put it to the end of the list
-                listOfWrongItems[index].ResetItem();
-                WrongButtonManager tmp = listOfWrongItems[index];
-                listOfWrongItems.RemoveAt(index);
-                listOfWrongItems.Add(tmp); // it should add as last item
-                if (index == 0)
-                {
-                    // if there are not any more wrong items, the wrong list of item should be hidden again
-                   
-                    listOfWrongItemsGO.SetActive(false); // here can go some animation, time permitted
-                }
-                else
-                {
-                    //Updates the buttonw with the new index in the list
-                    for(int i=0; i<listOfWrongItems.Count; i++)
-                    {
-                        if(listOfWrongItems[i].wrongIconImage.enabled)
-                        {
-                            listOfWrongItems[i].UpdateMyIdex(i);
-                        }
-                    }
-                }
-                // some particle effect on the position of the icon might be cool to give a feedback
-                break;
-        }
+        correctItems[(int)itemTypeAdded].ItemPickedUp(); // removes an item from the list
 
         // update the Text with the taken / Total
         remainingAndTotalText.text = $" {marketList.numOfItemTaken} of {generalList.Count}";
     }
 
-
-
-    /// <summary>
-    /// This method will be used when an item has been updated in the wrong list.
-    /// It will update the index of the button so that it will sta correctly when some item is pick up or removed.
-    /// We'll see the implementation
-    /// </summary>
-    protected void UpdateWrongListOfButtos()
-    {
-
-    }
 
 }
 
