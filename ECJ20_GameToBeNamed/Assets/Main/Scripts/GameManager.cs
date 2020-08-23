@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Class responsible for the general elements of the Game
@@ -33,12 +34,25 @@ public class GameManager : MonoBehaviour
         PAUSED
     }
 
+    public GameState CurrentGameState { get; private set; } = GameState.RUNNING;
+    public Events.EventGameState OnGameStateChanged;
 
     protected void Awake()
     {
         if (instance == null)
         {
             instance = this;
+        }
+    }
+
+    private void Update()
+    {
+        if (CurrentGameState == GameState.MENU)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
         }
     }
 
@@ -100,8 +114,74 @@ public class GameManager : MonoBehaviour
         // update the supermarket list UI
         mListUIMan.UpdateUIList(UpdateType.removeFromWrong, index);
     }
-    
 
+    /// <summary>
+    /// A method to update the current GameState
+    /// </summary>
+    /// <param name="state"></param>
+    void UpdateState(GameState state)
+    {
+        GameState previousGameState = CurrentGameState;
+        CurrentGameState = state;
 
+        switch (CurrentGameState)
+        {
+            case GameState.MENU:
+                Time.timeScale = 1.0f;
+                break;
+
+            case GameState.RUNNING:
+                Time.timeScale = 1.0f;
+                break;
+
+            case GameState.PAUSED:
+                Time.timeScale = 0.0f;
+                break;
+
+            default:
+                break;
+        }
+
+        // Dispatch current game state
+        OnGameStateChanged.Invoke(CurrentGameState, previousGameState);
+
+        Debug.Log("Current GameState is " + CurrentGameState);
+    }
+
+    public void StartMenu()
+    {
+        UpdateState(GameState.MENU);
+    }
+
+    public void StartGame()
+    {
+        // Add logic to wait for FadeOut to complete
+
+        LoadLevel("01_Phases");
+    }
+
+    public void TogglePause()
+    {
+        UpdateState(CurrentGameState == GameState.RUNNING ? GameState.PAUSED : GameState.RUNNING);
+    }
+
+    public void RestartGame()
+    {
+        // Add logic to wait for FadeOut to complete
+
+        LoadLevel("00_MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        // implement features for quitting (e.g. autosaving)?
+
+        Application.Quit();
+    }
+
+    public void LoadLevel(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
+    }
 
 }

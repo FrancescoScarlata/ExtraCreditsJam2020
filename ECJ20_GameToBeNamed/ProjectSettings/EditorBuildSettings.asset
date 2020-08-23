@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scenes/Test_LayoutWithCharacter.unity
     guid: f6787cd89eeda064ab508e4f3c842802
+  - enabled: 1
+    path: Assets/Main/Scenes/00_MainMenu.unity
+    guid: 73bb53fa8e3d6ea41ab71591e7861a60
+  - enabled: 1
+    path: Assets/Main/Scenes/01_Phases.unity
+    guid: 2341834d4a594ff4296a3961835c591b
   m_configObjects: {}

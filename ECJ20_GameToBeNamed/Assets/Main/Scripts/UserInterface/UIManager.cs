@@ -22,12 +22,31 @@ public class UIManager : MonoBehaviour
         FADEOUT
     }
 
-    private void Awake()
+    protected void Awake()
     {
         if(instance == null)
         {
             instance = this;
         }
+
+        //DontDestroyOnLoad(this);
+    }
+
+    private void Start()
+    {
+        StartCoroutine(FadeTo(0f, fadeTime));
+
+        GameManager.instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
+    }
+
+    /// <summary>
+    /// A method to handle conditions of a GameState change (e.g. activate pause menu)
+    /// </summary>
+    /// <param name="currentState"></param>
+    /// <param name="previousState"></param>
+    void HandleGameStateChanged(GameManager.GameState currentState, GameManager.GameState previousState)
+    {
+        pauseMenu.gameObject.SetActive(currentState == GameManager.GameState.PAUSED);
     }
 
     public void FadeIn()
