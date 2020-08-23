@@ -23,6 +23,16 @@ public class GameManager : MonoBehaviour
     public DayInfo [] dayInfos;
     //
 
+    /// <summary>
+    /// An enum to track current game state.  MENU - main menu, RUNNING - game proper, PAUSED - pause menu
+    /// </summary>
+    public enum GameState
+    {
+        MENU,
+        RUNNING,
+        PAUSED
+    }
+
 
     protected void Awake()
     {

@@ -17,6 +17,7 @@ public class SectionInteraction : _Interactions
         if (!mySection.IsEmpty)
         {
             GameManager.instance.InsertItem(mySection.myItem);
+            Debug.Log("Interaction succeeded.");
         }
         else
         {
