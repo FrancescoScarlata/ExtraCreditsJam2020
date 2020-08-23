@@ -107,8 +107,23 @@ public class Member : ScriptableObject
         Debug.LogWarning($"Error! The item {itemBought.myType} wasn't in neither of the 2 lists.");
     }
 
+    /// <summary>
+    /// Method to get the asked items
+    /// </summary>
+    /// <returns></returns>
+    public List<Item> GetTodayItems()
+    {
+        return itemsAskedThisRound;
+    }
 
-    
+    /// <summary>
+    /// Method called to get the not today asked items
+    /// </summary>
+    /// <returns></returns>
+    public List<Item> GetPrevItems()
+    {
+        return itemsAskedAndNotBought;
+    }
 
 }
 

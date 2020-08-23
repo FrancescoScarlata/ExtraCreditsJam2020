@@ -14,6 +14,15 @@ public class SectionInteraction : _Interactions
         // call the game manager to add my section item in the supermarket list
 
         Debug.Log("Interaction is happening. Yay.");
+        if (!mySection.IsEmpty)
+        {
+            GameManager.instance.InsertItem(mySection.myItem);
+        }
+        else
+        {
+            Debug.Log("Interaction failed, the container is empty");
+        }
+       
     }
 
 }

@@ -39,25 +39,55 @@ public class MemberManager : MonoBehaviour
     /// </summary>
     public void ResetImages()
     {
-        
+        // hides the images
+        foreach(Image item in itemIconsInDaily)
+        {
+            item.enabled = false;
+        }
+        foreach (Image item in itemIconsInPrevious)
+        {
+            item.enabled = false;
+        }
+        // hides the object with the previous items
+        listOfPreviousItems.SetActive(false);
     }
 
     /// <summary>
-    /// Method called to watch the daily items
+    /// Method called to show the daily items
     /// </summary>
     public void ShowTodayListItems()
     {
-
+        List<Item> todayItems = myMember.GetTodayItems();
+        for (int i = 0; i < todayItems.Count; i++)
+        {
+            itemIconsInDaily[i].sprite = todayItems[i].activeIcon;
+            itemIconsInDaily[i].enabled = true;
+        }
+        if (myMember.GetPrevItems().Count > 0)
+        {
+            ShowPreviousListItems();
+        }
     }
 
 
     /// <summary>
-    /// Method called to watch the previous days items
+    /// Method called to show the previous days items
     /// </summary>
     public void ShowPreviousListItems()
     {
+        List<Item> prevItems = myMember.GetPrevItems();
+        if (prevItems.Count == 0)
+            return;
 
+        listOfPreviousItems.SetActive(true);
+
+        for (int i = 0; i < prevItems.Count; i++)
+        {
+            itemIconsInPrevious[i].sprite = prevItems[i].activeIcon;
+            itemIconsInPrevious[i].enabled = true;
+        }
     }
+
 
 
     // during phase 3 some animation when the items are taken by the family?

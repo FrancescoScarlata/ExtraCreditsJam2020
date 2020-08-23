@@ -15,7 +15,7 @@ public class DayInfo : ScriptableObject
     public DateTime currentDateToShow; // if necessary
 
     //public int numberOFamilyfMembers;
-    public bool[] memberActive = new bool[5]; // probably just 4 to be in the same side i guess
+    public bool[] memberActive = new bool[4]; // probably just 4 to be in the same side i guess
     public int minNumOfItemsAsked;
     public int maxNumOfItemsAsked;
 

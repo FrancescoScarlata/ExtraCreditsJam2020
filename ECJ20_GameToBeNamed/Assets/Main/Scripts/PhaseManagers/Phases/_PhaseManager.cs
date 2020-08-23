@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 /// <summary>
@@ -7,6 +8,8 @@ using UnityEngine;
 /// </summary>
 public abstract class _PhaseManager : MonoBehaviour
 {
+    [Header("The GO that contains all the elements of this phase")]
+    public GameObject thisPhaseRoot;
 
     /// <summary>
     /// Method to be called at the start of this phase

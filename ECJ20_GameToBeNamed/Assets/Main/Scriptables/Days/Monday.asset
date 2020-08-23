@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dab84191e32ccf4a9a74a967d2e66e2, type: 3}
   m_Name: Monday
   m_EditorClassIdentifier: 
-  numberOFamilyfMembers: 1
+  memberActive: 01000000
   minNumOfItemsAsked: 3
   maxNumOfItemsAsked: 3
   amountOfPeople: 5

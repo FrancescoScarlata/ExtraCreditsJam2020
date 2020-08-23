@@ -10,16 +10,16 @@ using UnityEngine.UI;
 /// </summary>
 public class PhaseManager1_PreShopping : _PhaseManager
 {
-
-    [Header("GameObject that is the root for all the stuffin the Phase 1 screen")]
-    public GameObject phase1Elements;
     [Header("GameObject of the button to show when the journal is on")]
     public GameObject nextButton;
     // -> to describe this better and write there, but for now it's ok i guess
-    public GameObject dateObjects; 
+    public GameObject dateObjects;
+    public GameObject journalElements; // elements that should be a go that has inside the journal etc
 
-    [Header("The UI of the mmbers")]
+    [Header("The UI elements")]
     public MemberManager[] familyMembers;
+    public Button maskButton;
+    public Button shopButton;
     public Text takeMaskText;
 
 
@@ -31,14 +31,13 @@ public class PhaseManager1_PreShopping : _PhaseManager
     /// </summary>
     public override void StartPhase()
     {
+        Debug.Log("I'm in start phase!");
         thisDayInfos = GameManager.instance.dayInfos[GameManager.instance.currDay];
         useMask = false;
         // open the phase 1 screen
-        phase1Elements.SetActive(true);
-        
+        base.thisPhaseRoot.SetActive(true);
+        journalElements.SetActive(true);
         StartCoroutine(DisplayTheJournal());
-       
-
     }
 
     /// <summary>
@@ -47,18 +46,9 @@ public class PhaseManager1_PreShopping : _PhaseManager
     public void SkipJournal()
     {
         nextButton.SetActive(false);
+        journalElements.SetActive(false);
         // this will start the members showed and the other UI one piece at the time
         StartCoroutine(StartPhase1AfterJournal());
-    }
-
-
-    /// <summary>
-    /// Method called from the "Go Shop" button
-    /// This will then call the GameManagerTo Start the next phase
-    /// </summary>
-    public void GoShopping()
-    {
-        GameManager.instance.NextPhase();
     }
 
     /// <summary>
@@ -77,8 +67,19 @@ public class PhaseManager1_PreShopping : _PhaseManager
             useMask = true;
             takeMaskText.text = "Don't take the mask";
         }
-            
+
     }
+
+
+    /// <summary>
+    /// Method called from the "Go Shop" button
+    /// This will then call the GameManagerTo Start the next phase
+    /// </summary>
+    public void GoShopping()
+    {
+        GameManager.instance.NextPhase();
+    }
+
 
 
     /// <summary>
@@ -87,7 +88,18 @@ public class PhaseManager1_PreShopping : _PhaseManager
     public override void EndPhase()
     {
         // Fade should be called from the game manager
-        phase1Elements.SetActive(false);
+        thisPhaseRoot.SetActive(false);
+
+        dateObjects.SetActive(false);
+        maskButton.gameObject.SetActive(false);
+        shopButton.gameObject.SetActive(false);
+
+        // populates the supermarket List
+        foreach(MemberManager member in familyMembers)
+        {
+            GameManager.instance.sMList.AddMemberItems(member.myMember.GetItemsToBuy(), member.myMember.myID);
+        }
+        
     }
 
     /// <summary>
@@ -115,19 +127,42 @@ public class PhaseManager1_PreShopping : _PhaseManager
         yield return new WaitForSeconds(1);
 
         //reset all the MemberManagerUI
-        
+        foreach(MemberManager member in familyMembers)
+        {
+            member.ResetImages();
+        }
 
         // Activate the members active of this day
         // show the new items and eventual previous items
-
-        // Activate the members with old items, but not ask for new items
-        // show the previous items
-
-
+        for (int i=0; i<thisDayInfos.memberActive.Length; i++)
+        {
+            if (thisDayInfos.memberActive[i])
+            {
+                familyMembers[i].gameObject.SetActive(true);
+                familyMembers[i].InitializeItems(Random.Range(thisDayInfos.minNumOfItemsAsked, thisDayInfos.maxNumOfItemsAsked));
+                yield return new WaitForSeconds(1f);
+            }
+            else
+            {
+                // Activate the members with old items, but not ask for new items
+                // show the previous items
+                if (familyMembers[i].myMember.GetPrevItems().Count > 0)
+                {
+                    familyMembers[i].gameObject.SetActive(true);
+                    familyMembers[i].ShowPreviousListItems();
+                    yield return new WaitForSeconds(1f);
+                }
+            }
+            
+        }
 
         // show the buttons
+        maskButton.gameObject.SetActive(true);
 
-        // I
+        yield return new WaitForSeconds(1f);
+
+        shopButton.gameObject.SetActive(true);
+
 
     }
 

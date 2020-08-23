@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Reflection;
 using UnityEngine;
 
 /// <summary>
 /// Class responsible for the main list that will be used during the phase 2.
 /// This will contain all the items from the members. Both the current and previous asks items.
 /// </summary>
+[CreateAssetMenu(fileName = "generalList", menuName = "Infos/SMList", order = 1)]
 public class SupermarketList : ScriptableObject
 {
 	List<ItemInSMList> generalListItems= new List<ItemInSMList>();
@@ -23,7 +22,7 @@ public class SupermarketList : ScriptableObject
 	/// </summary>
 	/// <param name="items"></param>
 	/// <param name="member"></param>
-	public void AddMemberItems(List<Item> items, MemberTypes member)
+	public void AddMemberItems(List<Item> items, FamilyID member)
 	{
 		// adds each element in the general list
 		foreach (Item item in items)
@@ -35,10 +34,11 @@ public class SupermarketList : ScriptableObject
 
 	/// <summary>
 	/// Method called during the interaction with the section when an item is picked up from a game manager.
-	/// This will add in the general list if the item has been asked, otherwise it will go in the wrong list
+	/// This will add in the general list if the item has been asked, otherwise it will go in the wrong list.
+	/// It return the index in which the item was updated
 	/// </summary>
 	/// <param name="itemPicked"></param>
-	public void PickUpItem(Item itemPicked)
+	public int PickUpItem(Item itemPicked)
     {
 		for(int i=0; i<generalListItems.Count; i++)
         {
@@ -47,14 +47,14 @@ public class SupermarketList : ScriptableObject
 				generalListItems[i].hasBeenPickedUp = true;
 
 				numOfItemTaken++; // so that the updates know the curr amount
-				return;
+				return i;
             }
         }
 		// if it reaches here, it means that the item was not asked. Therefore, it goes in the wrong list
 		wrongListItems.Add(itemPicked);
 		numOfItemTaken++;
 		// check in the ui if this is the first item in the wrong list, to show the different list area
-
+		return -wrongListItems.Count;
     }
 	
 	/// <summary>
@@ -65,9 +65,21 @@ public class SupermarketList : ScriptableObject
     {
 		wrongListItems.RemoveAt(itemIndex);
 		numOfItemTaken--;
+
 		// update num of items curr taken
 
     }
+
+	/// <summary>
+	/// Gets the item needed at a specific index
+	/// </summary>
+	/// <param name="itemIndex"></param>
+	/// <returns></returns>
+	public Item GetItemFromWrongAt(int itemIndex)
+    {
+		return wrongListItems[itemIndex];
+    }
+
 
 	/// <summary>
 	/// Method called during phase 3 to get all the bought items.
@@ -94,6 +106,14 @@ public class SupermarketList : ScriptableObject
 		numOfItemTaken = 0;
     }
 
+	/// <summary>
+	/// Method called to get the General list of times to buy
+	/// </summary>
+	/// <returns></returns>
+	public List<ItemInSMList> GetGeneralList()
+    {
+		return generalListItems;
+    }
 }
 
 /// <summary>
@@ -102,10 +122,10 @@ public class SupermarketList : ScriptableObject
 public class ItemInSMList
 {
 	public Item itemInfo;
-	public MemberTypes memberAsking;
+	public FamilyID memberAsking;
 	public bool hasBeenPickedUp;
 
-	public ItemInSMList(Item item,MemberTypes member)
+	public ItemInSMList(Item item, FamilyID member)
     {
 		itemInfo = item;
 		memberAsking = member;

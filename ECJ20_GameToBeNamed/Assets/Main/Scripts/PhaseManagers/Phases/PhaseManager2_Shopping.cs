@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhaseManager2_Shopping : MonoBehaviour
+
+/// <summary>
+/// TO DO 
+/// </summary>
+public class PhaseManager2_Shopping : _PhaseManager
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public override void StartPhase()
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void EndPhase()
     {
-        
+        throw new System.NotImplementedException();
     }
 }
