@@ -20,4 +20,29 @@ public class SupermarketManager : MonoBehaviour
         sections[(int)type].PlaceBackItem();
     }
 
+    /// <summary>
+    /// Method called from the Phase 2 script to restock the items requested
+    /// </summary>
+    /// <param name="restocks"></param>
+    public void RestockTheSections(bool[] restocks)
+    {
+        for(int i=0; i<sections.Length; i++)
+        {
+            if (restocks[i])
+                sections[i].Restock();
+        }
+    }
+
+    /// <summary>
+    /// Method called by the phase 2 manager to have set some sections in promos
+    /// </summary>
+    /// <param name="promos"></param>
+    public void SetSectionsPromos(bool[] promos)
+    {
+        for (int i = 0; i < sections.Length; i++)
+        {
+            sections[i].isInPromo = promos[i];
+        }
+    }
+
 }

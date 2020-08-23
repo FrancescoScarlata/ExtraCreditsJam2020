@@ -10,12 +10,22 @@ public class PhaseManager3_DayResults : _PhaseManager
 
     public override void StartPhase()
     {
-        throw new System.NotImplementedException();
+        //fade
+        thisPhaseRoot.SetActive(true);
+
+        // Member Updates
+            // Moving items from asked to prev if not bought
+            // Update the images if a member got infected etc
+            // new infos
+
     }
 
     public override void EndPhase()
     {
-        throw new System.NotImplementedException();
+        //fade
+        thisPhaseRoot.SetActive(false);
+        GameManager.instance.sMList.ClearListEndDay();
+        //
     }
 
 

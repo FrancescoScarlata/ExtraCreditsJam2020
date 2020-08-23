@@ -14,7 +14,7 @@ public class SectionManager : MonoBehaviour
     public int maxItems; // don't know if is usefull
     [Header("This should have the same amount as maxItem")]
     public GameObject[] spritesShown;
-    //public bool isInPromo = false; // don't know if this s still usefull
+    public bool isInPromo = false; // don't know if this s still usefull
     public bool IsEmpty
     {
         get { return numOfItemRemaning <= 0; }
