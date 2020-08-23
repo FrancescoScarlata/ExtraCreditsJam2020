@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// A class to manage consistent UI throughout the game.
@@ -10,11 +11,12 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    [SerializeField] MainMenu mainMenu;
-    [SerializeField] PauseMenu pauseMenu;
+    [SerializeField] GameObject pauseMenu;
 
     [SerializeField] Image fadeImage;
     [SerializeField] float fadeTime = 2;
+
+    [SerializeField] bool isMainMenu = false;
 
     public enum FadeState
     {
@@ -37,6 +39,14 @@ public class UIManager : MonoBehaviour
         StartCoroutine(FadeTo(0f, fadeTime));
 
         GameManager.instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !isMainMenu)
+        {
+            TogglePause();
+        }
     }
 
     /// <summary>
@@ -77,5 +87,37 @@ public class UIManager : MonoBehaviour
             fadeImage.color = newColor;
             yield return null;
         }
+    }
+
+    public void StartGame()
+    {
+        // Add logic to wait for FadeOut to complete
+
+        LoadLevel("01_Phases");
+    }
+
+    public void TogglePause()
+    {
+
+        GameManager.instance.UpdateState(GameManager.instance.CurrentGameState == GameManager.GameState.RUNNING ? GameManager.GameState.PAUSED : GameManager.GameState.RUNNING);
+    }
+
+    public void RestartGame()
+    {
+        // Add logic to wait for FadeOut to complete
+
+        LoadLevel("00_MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        // implement features for quitting (e.g. autosaving)?
+
+        Application.Quit();
+    }
+
+    public void LoadLevel(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
     }
 }

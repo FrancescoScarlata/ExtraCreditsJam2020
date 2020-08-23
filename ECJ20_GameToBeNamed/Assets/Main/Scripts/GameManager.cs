@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public enum GameState
     {
-        MENU,
         RUNNING,
         PAUSED
     }
@@ -42,17 +41,6 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-        }
-    }
-
-    private void Update()
-    {
-        if (CurrentGameState == GameState.MENU)
-            return;
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            TogglePause();
         }
     }
 
@@ -119,17 +107,13 @@ public class GameManager : MonoBehaviour
     /// A method to update the current GameState
     /// </summary>
     /// <param name="state"></param>
-    void UpdateState(GameState state)
+    public void UpdateState(GameState state)
     {
         GameState previousGameState = CurrentGameState;
         CurrentGameState = state;
 
         switch (CurrentGameState)
         {
-            case GameState.MENU:
-                Time.timeScale = 1.0f;
-                break;
-
             case GameState.RUNNING:
                 Time.timeScale = 1.0f;
                 break;
@@ -148,40 +132,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("Current GameState is " + CurrentGameState);
     }
 
-    public void StartMenu()
-    {
-        UpdateState(GameState.MENU);
-    }
-
-    public void StartGame()
-    {
-        // Add logic to wait for FadeOut to complete
-
-        LoadLevel("01_Phases");
-    }
-
-    public void TogglePause()
-    {
-        UpdateState(CurrentGameState == GameState.RUNNING ? GameState.PAUSED : GameState.RUNNING);
-    }
-
-    public void RestartGame()
-    {
-        // Add logic to wait for FadeOut to complete
-
-        LoadLevel("00_MainMenu");
-    }
-
-    public void QuitGame()
-    {
-        // implement features for quitting (e.g. autosaving)?
-
-        Application.Quit();
-    }
-
-    public void LoadLevel(string levelName)
-    {
-        SceneManager.LoadScene(levelName);
-    }
+    
 
 }

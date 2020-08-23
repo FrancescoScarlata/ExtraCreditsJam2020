@@ -222,8 +222,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 339412834441930048, guid: 64cc522757f2f614f927b37e8eb367b9, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 339412835521962115, guid: 64cc522757f2f614f927b37e8eb367b9, type: 3}
+      propertyPath: isMainMenu
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 339412835521962116, guid: 64cc522757f2f614f927b37e8eb367b9, type: 3}
@@ -313,10 +313,6 @@ PrefabInstance:
     - target: {fileID: 339412835521962120, guid: 64cc522757f2f614f927b37e8eb367b9, type: 3}
       propertyPath: m_Name
       value: UIManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 339412835521962120, guid: 64cc522757f2f614f927b37e8eb367b9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64cc522757f2f614f927b37e8eb367b9, type: 3}
@@ -825,7 +821,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 661538723}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 809895404}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &661538723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,7 +883,6 @@ GameObject:
   - component: {fileID: 800088087}
   - component: {fileID: 800088089}
   - component: {fileID: 800088088}
-  - component: {fileID: 800088090}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -942,19 +949,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800088086}
   m_CullTransparentMesh: 0
---- !u!114 &800088090
+--- !u!114 &809895404 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 339412835521962115, guid: 64cc522757f2f614f927b37e8eb367b9, type: 3}
+  m_PrefabInstance: {fileID: 23534667}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800088086}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d527f5841bf5b944fbf4f2ba3edab713, type: 3}
+  m_Script: {fileID: 11500000, guid: a34d1884d08178d4195bc4f2e1a7d7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartButton: {fileID: 661538722}
 --- !u!1 &1822632484
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +974,7 @@ GameObject:
   - component: {fileID: 1822632488}
   - component: {fileID: 1822632489}
   m_Layer: 0
-  m_Name: UICamera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
