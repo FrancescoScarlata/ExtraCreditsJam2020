@@ -20,8 +20,11 @@ public class GameManager : MonoBehaviour
 
     public int currDay;
     public int currPhase = 0;
-    public bool hasPlayerGotInfectiousToday = false;
     public DayInfo [] dayInfos;
+
+
+    public bool isPlayerWithMask = false;
+    public bool isPlayerInfected = false;
     //
 
     /// <summary>
@@ -44,6 +47,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start() // i don't know it this is correct, but for now i guess it's enough
+    {
+        NewGame();
+    }
+
     /// <summary>
     /// Method to initialize the things at the start of a run.
     /// For now it's just to reset the member elements
@@ -54,7 +62,16 @@ public class GameManager : MonoBehaviour
         {
             member.myMember.NewGame(); // this will clear the item lists, so that no item will be there
         }
+        currPhase = 0;
+        currDay = 0;
+        phases[currPhase].StartPhase();
     }
+
+    public void PlayerInfection()
+    {
+        isPlayerInfected = true;
+    }
+
 
     /// <summary>
     /// Method called to move to the next phase
@@ -131,6 +148,10 @@ public class GameManager : MonoBehaviour
             if (currDay < dayInfos.Length)
             {
                 currDay++;
+
+                isPlayerInfected = false;
+                isPlayerWithMask = false;
+
                 phases[currPhase].StartPhase();
             }    
             else

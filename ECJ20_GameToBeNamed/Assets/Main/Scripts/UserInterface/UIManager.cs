@@ -59,12 +59,18 @@ public class UIManager : MonoBehaviour
         pauseMenu.gameObject.SetActive(currentState == GameManager.GameState.PAUSED);
     }
 
+    /// <summary>
+    /// From black to transparent. Alpha becomes 0
+    /// </summary>
     public void FadeIn()
     {
         // Fade in from black.
         StartCoroutine(FadeTo(0f, fadeTime));
     }
 
+    /// <summary>
+    /// From normal to black. Alpha Becomes 1
+    /// </summary>
     public void FadeOut()
     {
         // Fade out to black.

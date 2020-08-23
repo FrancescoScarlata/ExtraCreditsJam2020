@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,7 +28,7 @@ public class SectionManager : MonoBehaviour
         numOfItemRemaning = maxItems;
         foreach(GameObject sprite in spritesShown)
         {
-            sprite.SetActive(true);
+            //sprite.SetActive(true); TO ADD!
         }
 
     }

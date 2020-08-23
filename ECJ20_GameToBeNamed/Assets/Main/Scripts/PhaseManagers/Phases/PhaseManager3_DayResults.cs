@@ -1,33 +1,59 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
-/// TO DO
+/// Class responsible for the Phase 3 elements
 /// </summary>
 public class PhaseManager3_DayResults : _PhaseManager
 {
 
+    // UI elements
+
+
     public override void StartPhase()
     {
-        //fade
+        StartCoroutine(StartPhaseWithPauses());
+    }
+
+    IEnumerator StartPhaseWithPauses()
+    {
         thisPhaseRoot.SetActive(true);
 
         // Member Updates
-            // Moving items from asked to prev if not bought
-            // Update the images if a member got infected etc
-            // new infos
+        // Moving items from asked to prev if not bought
+        // Update the images if a member got infected etc
+        // new infos
+
+
+
+        UIManager.instance.FadeIn();
+        yield return new WaitForSeconds(1.2f);
 
     }
+
+
 
     public override void EndPhase()
     {
-        //fade
-        thisPhaseRoot.SetActive(false);
-        GameManager.instance.sMList.ClearListEndDay();
-        //
+        StartCoroutine(EndPhaseWithPauses());
     }
 
+
+    IEnumerator EndPhaseWithPauses()
+    {
+        UIManager.instance.FadeOut();
+        
+        yield return new WaitForSeconds(1.2f);
+
+        // clear all suff
+        GameManager.instance.sMList.ClearListEndDay();
+
+        thisPhaseRoot.SetActive(false);
+
+    }
 
 
     public void TestResetSupermarketList()

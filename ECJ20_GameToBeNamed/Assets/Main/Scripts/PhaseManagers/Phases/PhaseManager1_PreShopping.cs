@@ -31,6 +31,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
     /// </summary>
     public override void StartPhase()
     {
+        UIManager.instance.FadeIn();
         Debug.Log("I'm in start phase!");
         thisDayInfos = GameManager.instance.dayInfos[GameManager.instance.currDay];
         useMask = false;
@@ -38,6 +39,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
         base.thisPhaseRoot.SetActive(true);
         journalElements.SetActive(true);
         StartCoroutine(DisplayTheJournal());
+        
     }
 
     /// <summary>
@@ -67,7 +69,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
             useMask = true;
             takeMaskText.text = "Don't take the mask";
         }
-
+        GameManager.instance.isPlayerWithMask = useMask;
     }
 
 
@@ -87,19 +89,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
     /// </summary>
     public override void EndPhase()
     {
-        // Fade should be called from the game manager
-        thisPhaseRoot.SetActive(false);
-
-        dateObjects.SetActive(false);
-        maskButton.gameObject.SetActive(false);
-        shopButton.gameObject.SetActive(false);
-
-        // populates the supermarket List
-        foreach(MemberManager member in familyMembers)
-        {
-            GameManager.instance.sMList.AddMemberItems(member.myMember.GetItemsToBuy(), member.myMember.myID);
-        }
-        Debug.Log("Family lists added in the supermarketList");   
+        StartCoroutine(EndPhaseWithPauses());
     }
 
     /// <summary>
@@ -166,5 +156,26 @@ public class PhaseManager1_PreShopping : _PhaseManager
 
     }
 
+
+
+    IEnumerator EndPhaseWithPauses()
+    {
+        UIManager.instance.FadeOut();
+        yield return new WaitForSeconds(1.5f);
+        // Fade should be called from the game manager
+       
+        thisPhaseRoot.SetActive(false);
+
+        dateObjects.SetActive(false);
+        maskButton.gameObject.SetActive(false);
+        shopButton.gameObject.SetActive(false);
+
+        // populates the supermarket List
+        foreach (MemberManager member in familyMembers)
+        {
+            GameManager.instance.sMList.AddMemberItems(member.myMember.GetItemsToBuy(), member.myMember.myID);
+        }
+        Debug.Log("Family lists added in the supermarketList");
+    }
 
 }

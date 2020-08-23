@@ -18,7 +18,12 @@ public class PhaseManager2_Shopping : _PhaseManager
 
     public override void StartPhase()
     {
-        //fade
+        StartCoroutine(StartPhaseWithPauses());
+
+    }
+
+    IEnumerator StartPhaseWithPauses()
+    {      
         thisPhaseRoot.SetActive(true);
         thisDayInfos = GameManager.instance.dayInfos[GameManager.instance.currDay];
         // initialize the supermarket UI list
@@ -29,22 +34,22 @@ public class PhaseManager2_Shopping : _PhaseManager
 
         //Initialize the People with the positioning etc -> TO DO the AI director etc
 
+        UIManager.instance.FadeIn();
+        yield return new WaitForSeconds(1.5f);
+
         if (thisDayInfos.isTimerOn)
         {
             // Start Timer
-            StartCoroutine(StartTimer(thisDayInfos.secondsOfTimer+5));// just to give 5 seconds more, but probably it's not necessary
+            StartCoroutine(StartTimer(thisDayInfos.secondsOfTimer + 5));// just to give 5 seconds more, but probably it's not necessary
         }
 
         //Enable player controller, otherwise it can start moving first ?
-
     }
+
 
     public override void EndPhase()
     {
-        // Fade
-        thisPhaseRoot.SetActive(false);
-
-
+        StartCoroutine(EndPhaseWithPauses());
 
     }
 
@@ -64,6 +69,17 @@ public class PhaseManager2_Shopping : _PhaseManager
         }
         //Timer is ended
         GameManager.instance.NextPhase();
+    }
+
+
+
+    IEnumerator EndPhaseWithPauses()
+    {
+        UIManager.instance.FadeIn();
+        // stop the AI from moving
+        yield return new WaitForSeconds(1.2f);
+        
+        thisPhaseRoot.SetActive(false);
     }
 
 }
