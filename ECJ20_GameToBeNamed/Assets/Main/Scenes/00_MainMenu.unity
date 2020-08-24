@@ -4317,8 +4317,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1389181513}
-  - component: {fileID: 1389181511}
   - component: {fileID: 1389181512}
+  - component: {fileID: 1389181511}
   m_Layer: 0
   m_Name: MainMenuMusic
   m_TagString: Untagged
@@ -4335,10 +4335,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1389181510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9c3c725484a5744839fffedd12d555, type: 3}
+  m_Script: {fileID: 11500000, guid: 793689593c99e46469750a225ac389a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myAudioSource: {fileID: 1389181512}
+  timeToWait: 1
 --- !u!114 &1389181512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4351,7 +4352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44873d2fc8173d5419eb9bb7df0e3f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fmodEvent: event:/HomeMusic
+  fmodEvent: event:/MenuMusic
 --- !u!4 &1389181513
 Transform:
   m_ObjectHideFlags: 0
