@@ -19,7 +19,7 @@ MonoBehaviour:
   maxNumOfItemsAsked: 0
   amountOfPeople: 9
   amountOfSickPeople: 9
-  sectionsToRestock: 000000000000000000000000
+  sectionsToRestock: 000001010001000001000000
   sectionsWithPromos: 000000000000000000000000
   isTimerOn: 1
   secondsOfTimer: 180

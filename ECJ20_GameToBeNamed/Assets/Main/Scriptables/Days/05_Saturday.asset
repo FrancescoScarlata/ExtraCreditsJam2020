@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDateToShow: Oct 18th
   newsPaperOfTheDay: {fileID: 21300000, guid: 436f6117541acba48b3b3e871f40263c, type: 3}
-  memberActive: 00000000
-  minNumOfItemsAsked: 0
-  maxNumOfItemsAsked: 0
+  memberActive: 01010101
+  minNumOfItemsAsked: 3
+  maxNumOfItemsAsked: 5
   amountOfPeople: 13
   amountOfSickPeople: 9
   sectionsToRestock: 000000000000000000000000
-  sectionsWithPromos: 000000000000000000000000
+  sectionsWithPromos: 010100000000010100000000
   isTimerOn: 1
   secondsOfTimer: 180
