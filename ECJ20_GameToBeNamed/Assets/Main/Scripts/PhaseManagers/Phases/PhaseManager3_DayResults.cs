@@ -83,35 +83,42 @@ public class PhaseManager3_DayResults : _PhaseManager
             remainingItemsForMember[i] = members[i].GetItemsToBuy().Count;
         }
 
-        // checks who got infected
+        // checks who got infected : this is the infection review Text
         if (GameManager.instance.isPlayerInfected)
         {
             bool isOkPersonFound = false;
             // check if which person is OK. fist ok will get sick
             for (int i = 0; i < members.Length; i++)
             {
-                if (members[i].myState == MemberState.normal)
+                if (members[i].myState == MemberState.normal) // say infected result
                 {
                     members[i].myState = MemberState.infected;
                     isOkPersonFound = true;
-                    playerInfectionResultText.text = infectionTaken + $"{members[i].myID.ToString()} begins cough uncontrollably.";
+                    int phraseToSay = Random.Range(0, familyFeedbacks[0].reactions.infectionPhrasesSeparated1.Length);
+                    playerInfectionResultText.text = familyFeedbacks[0].reactions.infectionPhrasesSeparated1[phraseToSay] +
+                                        members[i].myID.ToString() + familyFeedbacks[0].reactions.infectionPhrasesSeparated2[phraseToSay];
                 }
 
             }
-            if (!isOkPersonFound)
+            if (!isOkPersonFound) 
             {
                 //if are all infected, someone would die
                 for (int i = 0; i < members.Length; i++)
                 {
-                    if (members[i].myState == MemberState.infected)
+                    if (members[i].myState == MemberState.infected) // say dead result
                     {
                         members[i].myState = MemberState.dead;
-
-                        playerInfectionResultText.text = infectionTaken + $"{members[i].myID.ToString()} died during the night.";
+                        int phraseToSay = Random.Range(0, familyFeedbacks[0].reactions.deadPhrasesSep1.Length);
+                        playerInfectionResultText.text = familyFeedbacks[0].reactions.deadPhrasesSep1[phraseToSay] +
+                                        members[i].myID.ToString() + familyFeedbacks[0].reactions.deadPhrasesSep2[phraseToSay];
                     }
 
                 }
             }
+        }
+        else // player not infected
+        {
+            playerInfectionResultText.text = familyFeedbacks[0].reactions.notInfectionPhrases[Random.Range(0, familyFeedbacks[0].reactions.notInfectionPhrases.Length)];
         }
 
         //depending of the calculations give the player, update the reaction
@@ -119,7 +126,7 @@ public class PhaseManager3_DayResults : _PhaseManager
         {
             if (numItemsAskedForMember[i] > 0)
             {
-                familyFeedbacks[i].transform.gameObject.SetActive(true);
+                familyFeedbacks[i].gameObject.SetActive(true);
                 if (remainingItemsForMember[i] == 0)
                     familyFeedbacks[i].UpdateFeedback(FeedbackType.positive);
                 else
@@ -133,6 +140,10 @@ public class PhaseManager3_DayResults : _PhaseManager
                         familyFeedbacks[i].UpdateFeedback(FeedbackType.negative);
                     }
                 }
+            }
+            else
+            {
+                familyFeedbacks[i].gameObject.SetActive(false);
             }
         }
 
