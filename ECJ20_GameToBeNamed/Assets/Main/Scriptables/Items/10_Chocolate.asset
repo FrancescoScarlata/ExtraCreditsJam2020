@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 10_Chocolate
   m_EditorClassIdentifier: 
   myType: 10
-  activeIcon: {fileID: 21300000, guid: 96e71b2557889fd4c906c4cf66a43223, type: 3}
+  activeIcon: {fileID: 21300000, guid: 48ef9f397065f0e46aa467b5969efebc, type: 3}
   notActiveIcon: {fileID: 21300000, guid: 0f8ede043815f8d4c8675e72e48f608c, type: 3}
   wrongItemIcon: {fileID: 21300000, guid: 703a138c68d384046b4b35fcd3c287e7, type: 3}
-  itemInBasket: {fileID: 0}
+  itemInBasket: {fileID: 21300000, guid: e70e87eff54791042bcc3fa886d8542c, type: 3}

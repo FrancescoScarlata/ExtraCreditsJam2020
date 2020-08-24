@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3688b26fa0cd94cb5e77fd31f77ddf, type: 3}
   m_Name: 11_Salt
   m_EditorClassIdentifier: 
-  myType: 0
-  activeIcon: {fileID: 21300000, guid: 96e71b2557889fd4c906c4cf66a43223, type: 3}
+  myType: 11
+  activeIcon: {fileID: 21300000, guid: 8fa179e3720687d4eaff66a70757c3c5, type: 3}
   notActiveIcon: {fileID: 21300000, guid: 0f8ede043815f8d4c8675e72e48f608c, type: 3}
   wrongItemIcon: {fileID: 21300000, guid: 703a138c68d384046b4b35fcd3c287e7, type: 3}
-  itemInBasket: {fileID: 0}
+  itemInBasket: {fileID: 21300000, guid: 8fa179e3720687d4eaff66a70757c3c5, type: 3}
