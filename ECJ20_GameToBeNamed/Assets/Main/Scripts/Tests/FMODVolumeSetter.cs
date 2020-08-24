@@ -10,7 +10,8 @@ public class FMODVolumeSetter : MonoBehaviour
 
     // all the buses
     FMOD.Studio.Bus master;
-    FMOD.Studio.Bus test;
+    FMOD.Studio.Bus music;
+    FMOD.Studio.Bus player;
 
 
     float testVolume;
@@ -20,16 +21,25 @@ public class FMODVolumeSetter : MonoBehaviour
     void Awake()
     {
         // this will assign the bus. after the test it will be a string parameter instead of hard coded
-        test = FMODUnity.RuntimeManager.GetBus("bus:/Master/Test"); 
+        music = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music"); 
         master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        //player = FMODUnity.RuntimeManager.GetBus("bus:/Master/Player");
     }
 
 
-    public void UpdateTestVolume(float value)
+    public void UpdateMusicVolume(float value)
     {
         testVolume = value;
-        test.setVolume(value);
+        music.setVolume(value);
     }
+
+    public void UpdatePlayerVolume(float value)
+    {
+        testVolume = value;
+        music.setVolume(value);
+    }
+
+
     public void UpdateMasterVolume(float value)
     {
         masterVolume = value;
