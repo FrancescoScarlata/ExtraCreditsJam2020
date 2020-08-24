@@ -2538,7 +2538,8 @@ MonoBehaviour:
     in a small, rural Freedonian town, and you lead a normal life.  However, as the
     Great War comes to a close across the sea, you hear rumours that a deadly sickness
     has arrived on the continent. \n\nIt is a time of change, and you need to be
-    ready to adapt if you are to take care of your family.\r"
+    ready to adapt if you are to take care of your family.\r  Make sure everybody
+    has what they need from the supermarket!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3af5da656e783ec4f89bb4fe55d1e38c, type: 2}
   m_sharedMaterial: {fileID: -9110008797876122578, guid: 3af5da656e783ec4f89bb4fe55d1e38c, type: 2}
