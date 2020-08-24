@@ -10,7 +10,7 @@ public class SimpleFMODAudioSource : MonoBehaviour
 {
 
     // this creates a separate instance, it is not attached to the emitter
-    private FMOD.Studio.EventInstance instance;
+    protected FMOD.Studio.EventInstance instance;
 
     // this is the event, the one that is in the fmod project
     [FMODUnity.EventRef]

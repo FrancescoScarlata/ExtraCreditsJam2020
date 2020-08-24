@@ -14067,28 +14067,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 717486718}
+  - component: {fileID: 717486719}
   - component: {fileID: 717486717}
-  - component: {fileID: 717486716}
   m_Layer: 0
-  m_Name: TestAudio
+  m_Name: MusicManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &717486716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717486715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44873d2fc8173d5419eb9bb7df0e3f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fmodEvent: event:/HomeMusic
 --- !u!114 &717486717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14098,10 +14085,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 717486715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9c3c725484a5744839fffedd12d555, type: 3}
+  m_Script: {fileID: 11500000, guid: b00b7187904231b44833f60140fefa1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAudioSource: {fileID: 717486716}
+  audioSource: {fileID: 717486719}
 --- !u!4 &717486718
 Transform:
   m_ObjectHideFlags: 0
@@ -14116,6 +14103,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &717486719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717486715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c922d804e0bc24d9028c0fc27d2fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEvent: event:/Music_fades
 --- !u!1 &717816623
 GameObject:
   m_ObjectHideFlags: 0
@@ -19744,6 +19744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975327962}
+  - component: {fileID: 975327963}
   m_Layer: 5
   m_Name: Journal Elements
   m_TagString: Untagged
@@ -19772,6 +19773,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &975327963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975327961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Newspaper
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &979528934
 GameObject:
   m_ObjectHideFlags: 0
@@ -33297,6 +33321,7 @@ MonoBehaviour:
   sMList: {fileID: 11400000, guid: 6029708189447fb4c81017d0a37dca91, type: 2}
   sMMan: {fileID: 517976107}
   mListUIMan: {fileID: 1021464349}
+  musicManager: {fileID: 717486719}
   phases:
   - {fileID: 1313367765}
   - {fileID: 783823669}

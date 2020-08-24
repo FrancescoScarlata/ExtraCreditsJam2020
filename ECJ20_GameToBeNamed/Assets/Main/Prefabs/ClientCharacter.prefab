@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4710161024707371722}
   - component: {fileID: 4710161024707371733}
   - component: {fileID: 1410166223539607207}
+  - component: {fileID: 1352729673084223633}
+  - component: {fileID: 249260865105627884}
   m_Layer: 0
   m_Name: ClientCharacter
   m_TagString: Client
@@ -106,6 +108,32 @@ MonoBehaviour:
   myAnim: {fileID: 0}
   upFace: {fileID: 0}
   downFace: {fileID: 0}
+--- !u!114 &1352729673084223633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710161024707371732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44873d2fc8173d5419eb9bb7df0e3f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEvent: event:/Cough
+--- !u!114 &249260865105627884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710161024707371732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44873d2fc8173d5419eb9bb7df0e3f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEvent: event:/Sneeze
 --- !u!1 &4710161025527708347
 GameObject:
   m_ObjectHideFlags: 0

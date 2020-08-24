@@ -39,6 +39,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
         // open the phase 1 screen
         base.thisPhaseRoot.SetActive(true);
         journalElements.SetActive(true);
+
         StartCoroutine(DisplayTheJournal());
         
     }
@@ -50,7 +51,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
     {
         nextButton.SetActive(false);
         journalElements.SetActive(false);
-        newspaperImage.sprite = thisDayInfos.newsPaperOfTheDay;
+        
         // this will start the members showed and the other UI one piece at the time
         StartCoroutine(StartPhase1AfterJournal());
     }
@@ -102,6 +103,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
     /// <returns></returns>
     protected IEnumerator DisplayTheJournal()
     {
+        newspaperImage.sprite = thisDayInfos.newsPaperOfTheDay;
         yield return new WaitForSeconds(2); // after 2 seconds, the Next button will appear
         nextButton.SetActive(true);
     }

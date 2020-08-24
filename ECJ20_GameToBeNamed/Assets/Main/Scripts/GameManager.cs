@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public SupermarketList sMList;
     public SupermarketManager sMMan;
     public MarketListUIManager mListUIMan;
+    public GameMusicManager musicManager;
 
     public _PhaseManager[] phases = new _PhaseManager[3]; // these will be be linked to the actal 3 phases
 
@@ -139,7 +140,7 @@ public class GameManager : MonoBehaviour
     {
         // the next phase will open after a fade in/out
         phases[currPhase].EndPhase();
-       
+        StartCoroutine(ChangeMusicBetweenPhases());
         yield return new WaitForSeconds(1.2f);
         // next phase called
         currPhase = (currPhase + 1) % phases.Length;
@@ -163,6 +164,32 @@ public class GameManager : MonoBehaviour
         else
         {
             phases[currPhase].StartPhase();
+        }
+    }
+
+
+    IEnumerator ChangeMusicBetweenPhases()
+    {
+        float startingSound;
+        float finalValue;
+        if (currPhase == 1)
+        {
+            startingSound = 1;
+            finalValue = 0;
+        }
+        else
+        {
+            startingSound = 0;
+            finalValue = 1;
+        }
+
+            
+        float currTime = 0;
+        while (currTime < 1)
+        {
+            musicManager.UpdatePhaseMusicValue(Mathf.Lerp(startingSound, finalValue, currTime));
+                yield return null;
+            currTime += Time.deltaTime;
         }
     }
 }
