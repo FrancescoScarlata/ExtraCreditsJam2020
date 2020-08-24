@@ -18,4 +18,14 @@ public class MemberReactionInfos : ScriptableObject
 
     public string[] negativePhrases;
 
+    public string[] notInfectionPhrases;
+
+    [Header("The 2 parts of the infection phrase (they both need to have the same length)")]
+    public string[] infectionPhrasesSeparated1;
+    public string[] infectionPhrasesSeparated2;
+
+    [Header("The 2 parts of the dead phrase (they both need to have the same length)")]
+    public string[] deadPhrasesSep1;
+    public string[] deadPhrasesSep2;
+
 }
