@@ -264,7 +264,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 339412834441930048, guid: 64cc522757f2f614f927b37e8eb367b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 339412835521962115, guid: 64cc522757f2f614f927b37e8eb367b9, type: 3}
       propertyPath: isMainMenu
