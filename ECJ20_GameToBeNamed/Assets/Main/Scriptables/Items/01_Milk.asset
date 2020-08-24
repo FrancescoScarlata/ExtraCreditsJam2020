@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 01_Milk
   m_EditorClassIdentifier: 
   myType: 1
-  activeIcon: {fileID: 21300000, guid: d31ef8c3435e66d43877eb8652c2d5a2, type: 3}
+  activeIcon: {fileID: 21300000, guid: b00016a6bde77b04da4844df0bb1ccc4, type: 3}
   notActiveIcon: {fileID: 21300000, guid: 0f8ede043815f8d4c8675e72e48f608c, type: 3}
   wrongItemIcon: {fileID: 21300000, guid: 703a138c68d384046b4b35fcd3c287e7, type: 3}
   itemInBasket: {fileID: 21300000, guid: d31ef8c3435e66d43877eb8652c2d5a2, type: 3}

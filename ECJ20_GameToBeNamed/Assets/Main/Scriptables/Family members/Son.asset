@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e7dd57795177749a7d7e4149ba346e, type: 3}
   m_Name: Son
   m_EditorClassIdentifier: 
-  memberOk: {fileID: 21300000, guid: 9ab5a99547cc9da418a641d7d17e7d11, type: 3}
-  memberInfected: {fileID: 21300000, guid: 88ada7107b6093b40aa6683cec2d0bde, type: 3}
-  memberDead: {fileID: 21300000, guid: 9da665940becd6e4cbf41705effe46bc, type: 3}
+  memberOk: {fileID: 21300000, guid: 21e191271ccc2264286d868220093848, type: 3}
+  memberInfected: {fileID: 21300000, guid: 66b53e1b3b05383458ff84fff4b583e9, type: 3}
+  memberDead: {fileID: 21300000, guid: ce3326753bcd5ca4495ed0885101ef8d, type: 3}
   myID: 2
   myState: 0
   itemsICanAskFor:

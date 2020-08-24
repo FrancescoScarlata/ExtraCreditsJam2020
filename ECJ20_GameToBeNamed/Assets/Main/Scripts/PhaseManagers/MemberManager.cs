@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +26,22 @@ public class MemberManager : MonoBehaviour
     /// <param name="numOfItems"></param>
     public void InitializeItems(int numOfItems)
     {
+        
+        switch (myMember.myState)
+        {
+            case MemberState.normal:
+                memberImage.sprite = myMember.memberOk;
+                break;
+            case MemberState.infected:
+                memberImage.sprite = myMember.memberInfected;
+                break;
+            case MemberState.dead:
+                memberImage.sprite = myMember.memberDead;
+                gameObject.SetActive(false);
+                return;
+        }
+       
+        
         myMember.AskItems(numOfItems);
 
         // show items inside the list of the day

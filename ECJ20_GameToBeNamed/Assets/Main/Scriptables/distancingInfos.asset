@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: distancingInfos
   m_EditorClassIdentifier: 
   maskOverlay: {fileID: 21300000, guid: b705a93d01fcc810485040c3fb225c5f, type: 3}
-  noMaskOverlay: {fileID: 21300000, guid: b705a93d01fcc810485040c3fb225c5f, type: 3}
+  noMaskOverlay: {fileID: 21300000, guid: 9b12818b1885feb4ab5851b5a52eae16, type: 3}
   radiusWithMask: 1.5
   radiusWithoutMask: 3
   overlayColorWhenDistancing: {r: 1, g: 1, b: 1, a: 0.11764706}
