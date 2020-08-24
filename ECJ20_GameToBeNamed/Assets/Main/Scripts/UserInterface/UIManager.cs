@@ -98,7 +98,7 @@ public class UIManager : MonoBehaviour
 
     public void StartGame()
     {
-        // Add logic to wait for FadeOut to complete
+        // Still would like some fadeout logic here.  I don't really understand Corountines, so I don't know how to make one let fade out complete before loading a new level.
 
         LoadLevel("01_Phases");
     }
