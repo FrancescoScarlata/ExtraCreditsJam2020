@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dab84191e32ccf4a9a74a967d2e66e2, type: 3}
+  m_Name: 00_Monday
+  m_EditorClassIdentifier: 
+  currentDateToShow: Oct 13th
+  newsPaperOfTheDay: {fileID: 21300000, guid: 76e96ddef64d44b4f86be3239150c4c8, type: 3}
+  memberActive: 01000000
+  minNumOfItemsAsked: 3
+  maxNumOfItemsAsked: 3
+  amountOfPeople: 5
+  amountOfSickPeople: 0
+  sectionsToRestock: 010101010101010101010101
+  sectionsWithPromos: 000000000000000000000000
+  isTimerOn: 0
+  secondsOfTimer: 0

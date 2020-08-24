@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         currPhase = (currPhase + 1) % phases.Length;
         if (currPhase == 0)
         {
-            if (currDay < dayInfos.Length)
+            if (currDay < dayInfos.Length-1)
             {
                 currDay++;
 
@@ -156,6 +156,7 @@ public class GameManager : MonoBehaviour
             }    
             else
             {
+                Debug.Log("Days finished! Go to the ending scene");
                 // finish game / ending scene
             }
         }
