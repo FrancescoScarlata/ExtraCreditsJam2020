@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
+    public CharAnimationController myAnimController;
+
     private void Awake()
     {
         if(instance == null)
@@ -42,7 +44,8 @@ public class PlayerController : MonoBehaviour
     {
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), 
             Input.GetAxisRaw("Vertical"));
-
+        if(myAnimController)
+            myAnimController.UpdateCharacterAnimation(movement.sqrMagnitude, movement.y > 0);
        // if(movement.x < 0)
        // {
        //     sprRend.flipX = true;
