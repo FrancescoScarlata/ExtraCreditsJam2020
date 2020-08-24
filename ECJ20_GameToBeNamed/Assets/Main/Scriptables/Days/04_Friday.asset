@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dab84191e32ccf4a9a74a967d2e66e2, type: 3}
   m_Name: 04_Friday
   m_EditorClassIdentifier: 
-  currentDateToShow: 
-  newsPaperOfTheDay: {fileID: 0}
+  currentDateToShow: Oct 17th
+  newsPaperOfTheDay: {fileID: 21300000, guid: 869b352780bad804c876fdc49af2e865, type: 3}
   memberActive: 00000000
   minNumOfItemsAsked: 0
   maxNumOfItemsAsked: 0
-  amountOfPeople: 0
-  amountOfSickPeople: 0
+  amountOfPeople: 12
+  amountOfSickPeople: 7
   sectionsToRestock: 000000000000000000000000
   sectionsWithPromos: 000000000000000000000000
-  isTimerOn: 0
-  secondsOfTimer: 0
+  isTimerOn: 1
+  secondsOfTimer: 180

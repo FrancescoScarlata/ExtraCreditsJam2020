@@ -17,8 +17,26 @@ MonoBehaviour:
   - {r: 0.7830189, g: 0.45718762, b: 0, a: 0.9254902}
   - {r: 0.8867924, g: 0.0033463205, b: 0.0033463205, a: 0.9098039}
   positivePhrases:
-  - X
+  - Thank you!
+  - Just what I needed.
+  - Thank you so much!
   neutralPhrases:
-  - Y
+  - Well, thanks anyway.
+  - "Hmm, where\u2019s what I asked for?"
+  - Were they out today?
   negativePhrases:
-  - Z
+  - "I\u2019m not mad, just disappointed."
+  - " \u2026 "
+  - '*Grumble, grumble*'
+  notInfectionPhrases:
+  - You hurry home with a spring in your step.  At the dinner table you observe that
+    conditions have not changed.
+  infectionPhrasesSeparated1:
+  - 'You feel a bit light-headed on your way home.  During dinner, '
+  infectionPhrasesSeparated2:
+  - ' begins to cough uncontrollably.'
+  deadPhrasesSep1:
+  - 'Late in the night, elsewhere in the house, the constant sound of coughing and
+    laboured breathing suddenly ceases.  In the morning, you discover that '
+  deadPhrasesSep2:
+  - ' has succumbed to their sickness.'

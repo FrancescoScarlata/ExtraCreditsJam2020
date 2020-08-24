@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dab84191e32ccf4a9a74a967d2e66e2, type: 3}
   m_Name: 01_Tuesday
   m_EditorClassIdentifier: 
-  currentDateToShow: 
+  currentDateToShow: Oct 14th
   newsPaperOfTheDay: {fileID: 21300000, guid: b316d4f963446cc48bd40520f3b313c6, type: 3}
   memberActive: 00010001
   minNumOfItemsAsked: 2
