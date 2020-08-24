@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8810473884637865219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EventTest/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: -12
+  Max: 12
+  Default: 0
+  Exists: 0
 --- !u!114 &-8682251231738132981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +86,7 @@ MonoBehaviour:
   guid: 1923feb515aeb0429deffa331ce06659
   Banks:
   - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -112,6 +130,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-7459901947950878314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Reverb
+  m_EditorClassIdentifier: 
+  Name: Reverb
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-7320598078324801030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +182,7 @@ MonoBehaviour:
   lastModified: 637338654100000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6958236823648180489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +200,7 @@ MonoBehaviour:
   lastModified: 637338654100000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6893309286165636647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +219,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &-6515894398416428421
+--- !u!114 &-6886845315986476322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,14 +228,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: Reverb
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music_fades
   m_EditorClassIdentifier: 
-  Name: Reverb
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
+  Path: event:/Music_fades
+  guid: 9e92e9640ca2784e87de6dc87c9fbbce
+  Banks:
+  - {fileID: 6222155194802244105}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2913091272988469846}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-6267068562860840968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,11 +257,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../ECJ20_FmodProject/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637338539098825062
+  lastModified: 637338836276759666
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2374
+    Value: 2456
   Exists: 1
 --- !u!114 &-6210971807271408117
 MonoBehaviour:
@@ -239,6 +281,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-5873997597545973080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/TestBank.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/TestBank.bank
+  SubDir: 
+  lastModified: 637338836341446175
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5732827494921714187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +314,7 @@ MonoBehaviour:
   Path: event:/Sneeze
   guid: 32900321fe4a7e4aa5b495732d3f781c
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -277,7 +337,7 @@ MonoBehaviour:
   Path: event:/Store Item/Meat
   guid: c0a54da90b0ead4eb8e5e457a24d2f44
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -285,7 +345,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 386
---- !u!114 &-5055835774176053696
+--- !u!114 &-5250355788951331330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,14 +354,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EventTest/Pitch
   m_EditorClassIdentifier: 
-  Path: ../ECJ20_FmodProject/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637337740242529463
-  LoadResult: 0
-  FileSizes: []
+  Name: Pitch
+  Min: -12
+  Max: 12
+  Default: 0
+  Exists: 1
+--- !u!114 &-4955959717368506592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Reverb
+  m_EditorClassIdentifier: 
+  Name: Reverb
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 1
 --- !u!114 &-4576148994277379062
 MonoBehaviour:
@@ -354,7 +430,7 @@ MonoBehaviour:
   Path: event:/Store Item/Milk
   guid: e97e90027c6475459c3bbcb31b4a8170
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -362,7 +438,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 530
---- !u!114 &-4304685251110123569
+--- !u!114 &-4309832816130601927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,14 +448,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/TestBank.bank
+  m_Name: bank:/Player.bank
   m_EditorClassIdentifier: 
-  Path: ../ECJ20_FmodProject/Build/Desktop/TestBank.bank
+  Path: ../ECJ20_FmodProject/Build/Desktop/Player.bank
   SubDir: 
-  lastModified: 637337740242668131
+  lastModified: 637338197988982899
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4228977659151674831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +471,7 @@ MonoBehaviour:
   Path: event:/UI/UI_Back
   guid: 3b7b42a005dd3749b0a687a0ffa04490
   Banks:
-  - {fileID: 6212264969401750958}
+  - {fileID: 5250492017868566566}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -418,7 +494,7 @@ MonoBehaviour:
   Path: event:/Put_down
   guid: fc7deab6551cd649b161314576b396dc
   Banks:
-  - {fileID: -4533219213638785102}
+  - {fileID: -1056077543447332837}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -441,7 +517,7 @@ MonoBehaviour:
   Path: event:/Store Item/Fish
   guid: ab031896f877fe41b238f49c739c5e70
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -464,7 +540,7 @@ MonoBehaviour:
   Path: event:/HomeMusic
   guid: 578015a752ce1340b7e5253ad995ddb9
   Banks:
-  - {fileID: -1358323496916064109}
+  - {fileID: 6222155194802244105}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -487,6 +563,24 @@ MonoBehaviour:
   Path: ../ECJ20_FmodProject/Build/Desktop/Non_player.bank
   SubDir: 
   lastModified: 637336900636973378
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-3565360423012293313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/TestBank.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/TestBank.bank
+  SubDir: 
+  lastModified: 637338195948787365
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -523,7 +617,7 @@ MonoBehaviour:
   Path: event:/Store Item/Soap
   guid: 31d895aed298194ebc28dedadef5dd1c
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -546,7 +640,7 @@ MonoBehaviour:
   Path: event:/MarketMusic
   guid: 3637bc55f3fe754a8545af3a8f251e0e
   Banks:
-  - {fileID: -1358323496916064109}
+  - {fileID: 6222155194802244105}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -589,6 +683,24 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-3163299226424225947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637338836276678597
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-3026353359220974276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,7 +716,7 @@ MonoBehaviour:
   Path: event:/Newspaper
   guid: 72ab73c56291c84fa6971e948f3cbb80
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -612,6 +724,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1161
+--- !u!114 &-2913091272988469846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_fades/HomeOrShop
+  m_EditorClassIdentifier: 
+  Name: HomeOrShop
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-2740956287731198054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,7 +774,7 @@ MonoBehaviour:
   Path: event:/Footsteps
   guid: cc5b3589cc0afd48ac525c7c18ae51c1
   Banks:
-  - {fileID: -4533219213638785102}
+  - {fileID: -1056077543447332837}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -670,7 +799,7 @@ MonoBehaviour:
   lastModified: 637338654100000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1959813701962981739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,7 +903,7 @@ MonoBehaviour:
   Path: event:/End_Till
   guid: 853d35cf5215d944b543f27515f8a448
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -817,7 +946,7 @@ MonoBehaviour:
   lastModified: 637338654100000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1128829378214138521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,7 +962,7 @@ MonoBehaviour:
   Path: event:/MenuMusic
   guid: 08d8f66216ec58429bfc54a0382a917e
   Banks:
-  - {fileID: -1358323496916064109}
+  - {fileID: 6222155194802244105}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -841,6 +970,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 53332
+--- !u!114 &-1056077543447332837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Player.bank
+  SubDir: 
+  lastModified: 637338836340345194
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-1018678162727124462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,7 +1004,25 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &-993593638091049969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637338195864063003
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-753480063775607890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,7 +1056,7 @@ MonoBehaviour:
   Path: event:/Store Item/Chocolate
   guid: a258fd88c2366547b6c0e30528fcfac5
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -984,12 +1149,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6267068562860840968}
-  - {fileID: -5055835774176053696}
-  - {fileID: -1358323496916064109}
-  - {fileID: -8244974424205830976}
-  - {fileID: -4533219213638785102}
-  - {fileID: -4304685251110123569}
-  - {fileID: 6212264969401750958}
+  - {fileID: -3163299226424225947}
+  - {fileID: 6222155194802244105}
+  - {fileID: 1646150367655459562}
+  - {fileID: -1056077543447332837}
+  - {fileID: -5873997597545973080}
+  - {fileID: 5250492017868566566}
   EditorEvents:
   - {fileID: 5649790544065804434}
   - {fileID: -3251743387262940660}
@@ -1018,13 +1183,14 @@ MonoBehaviour:
   - {fileID: 8996476338420977862}
   - {fileID: -1128829378214138521}
   - {fileID: -4142579131210009389}
+  - {fileID: -6886845315986476322}
   EditorParameters:
-  - {fileID: -6515894398416428421}
+  - {fileID: -4955959717368506592}
   MasterBanks:
-  - {fileID: -5055835774176053696}
+  - {fileID: -3163299226424225947}
   StringsBanks:
   - {fileID: -6267068562860840968}
-  stringsBankWriteTime: 637338539098825062
+  stringsBankWriteTime: 637338836276759666
   cacheVersion: 3
 --- !u!114 &446408669747236031
 MonoBehaviour:
@@ -1041,7 +1207,7 @@ MonoBehaviour:
   Path: event:/Store Item/Bread
   guid: 087c61462ba6b84db7defc4366e84a14
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1064,7 +1230,7 @@ MonoBehaviour:
   Path: event:/Store Item/Fruit
   guid: 55fae4b0ec15164aa5dd30e54d02633b
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1122,7 +1288,7 @@ MonoBehaviour:
   Path: event:/UI/UI_Accept
   guid: 4f5f544fd700f54ebc18620037ea81f6
   Banks:
-  - {fileID: 6212264969401750958}
+  - {fileID: 5250492017868566566}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1147,6 +1313,24 @@ MonoBehaviour:
   Max: 12
   Default: 0
   Exists: 0
+--- !u!114 &1646150367655459562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Non_player.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Non_player.bank
+  SubDir: 
+  lastModified: 637338836338609681
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1839311410969129362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,7 +1437,7 @@ MonoBehaviour:
   lastModified: 637338654100000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &3448972812085316129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,7 +1471,7 @@ MonoBehaviour:
   Path: event:/Store Item/ToiletPaper
   guid: 6a8f8ced9bb0f84ebb539da5eb457623
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1310,7 +1494,7 @@ MonoBehaviour:
   Path: event:/Store Item/Medicine
   guid: 7c0032c3e355f94b92d7dc95070ecd55
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1369,7 +1553,7 @@ MonoBehaviour:
   Path: event:/Store Item/Salt
   guid: bdc5e2189d3a3f4f8aa9edec07c0c5f1
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1394,6 +1578,24 @@ MonoBehaviour:
   Max: 12
   Default: 0
   Exists: 0
+--- !u!114 &4590649695663324062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/UI.bank
+  SubDir: 
+  lastModified: 637338195950501842
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &4914612230395931758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,6 +1614,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &5250492017868566566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/UI.bank
+  SubDir: 
+  lastModified: 637338836342864821
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5649790544065804434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,15 +1647,33 @@ MonoBehaviour:
   Path: event:/Tests/EventTest
   guid: b15ac0e2b29398458719118509b058d9
   Banks:
-  - {fileID: -4304685251110123569}
+  - {fileID: -5873997597545973080}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -1354662173958985326}
+  - {fileID: -5250355788951331330}
   MinDistance: 0
   MaxDistance: 0
   Length: 1712
+--- !u!114 &5740761854911323291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Non_player.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Non_player.bank
+  SubDir: 
+  lastModified: 637338197989012841
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &6075170886469300582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1451,7 +1689,7 @@ MonoBehaviour:
   Path: event:/Store Item/Eggs
   guid: b25c63440e1b6146a62561e05994c3eb
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1459,7 +1697,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 325
---- !u!114 &6212264969401750958
+--- !u!114 &6222155194802244105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1469,11 +1707,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/UI.bank
+  m_Name: bank:/Music.bank
   m_EditorClassIdentifier: 
-  Path: ../ECJ20_FmodProject/Build/Desktop/UI.bank
+  Path: ../ECJ20_FmodProject/Build/Desktop/Music.bank
   SubDir: 
-  lastModified: 637337740242727964
+  lastModified: 637338836334402220
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1510,7 +1748,7 @@ MonoBehaviour:
   Path: event:/Store Item/Beans
   guid: 615f1e233ebef94bb7a2d8dd9d8dfbf0
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1535,7 +1773,7 @@ MonoBehaviour:
   lastModified: 637338654100000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &7237380067842778454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,7 +1825,7 @@ MonoBehaviour:
   Min: -12
   Max: 12
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &7809622164324857359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1605,6 +1843,24 @@ MonoBehaviour:
   Max: 12
   Default: 0
   Exists: 1
+--- !u!114 &7863745100598198944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Music.bank
+  SubDir: 
+  lastModified: 637338197990991573
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &8004405404893940384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,7 +1876,7 @@ MonoBehaviour:
   Path: event:/Cough
   guid: f94c18e5a09d054481e267ec61cd1b5e
   Banks:
-  - {fileID: -8244974424205830976}
+  - {fileID: 1646150367655459562}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1643,7 +1899,7 @@ MonoBehaviour:
   Path: event:/Pick_up
   guid: ddc9e710b223604fa0fe554894dbbad7
   Banks:
-  - {fileID: -4533219213638785102}
+  - {fileID: -1056077543447332837}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1666,7 +1922,7 @@ MonoBehaviour:
   Path: event:/UI/UI_Click
   guid: f22874f18205774386e7c5fdbd492856
   Banks:
-  - {fileID: 6212264969401750958}
+  - {fileID: 5250492017868566566}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
