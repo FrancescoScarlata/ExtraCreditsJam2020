@@ -58,18 +58,17 @@ public class PlayerInfectionController : MonoBehaviour
     {
         if (collision.tag == "Client")
         {
-            myRend.color = myInfos.overlayColorWhenDistancing;
+            //Debug.Log($"A client Exited the area! Now they are : {clientCollisions.Count} ");
             //do something here
             clientCollisions.Remove(collision);
             if (clientCollisions.Count == 0) // no other people inside
             {
                 //if one person around was infected, then calcultate
-                if(isSomeoneInfected)
+                myRend.color = myInfos.overlayColorWhenDistancing;
+                if (isSomeoneInfected)
                     CalculateChanceOfInfection(Time.time - startingTime);
             }
-        }
-
-        
+        }  
     }
 
     /// <summary>

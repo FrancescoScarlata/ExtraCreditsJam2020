@@ -151,7 +151,7 @@ public class PhaseManager1_PreShopping : _PhaseManager
         }
 
         // show the buttons
-        maskButton.gameObject.SetActive(true);
+        //maskButton.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(0.3f);
 

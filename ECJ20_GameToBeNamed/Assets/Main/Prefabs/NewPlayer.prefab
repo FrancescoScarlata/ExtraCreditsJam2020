@@ -274,6 +274,10 @@ PrefabInstance:
       propertyPath: myAnimController
       value: 
       objectReference: {fileID: 1595513539}
+    - target: {fileID: 7463498769456509370, guid: d08a56d85cde38bfca58656511871dfb, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: fb35ec38e29300444aad51c5798ebed5, type: 2}
     - target: {fileID: 7463498769456509372, guid: d08a56d85cde38bfca58656511871dfb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

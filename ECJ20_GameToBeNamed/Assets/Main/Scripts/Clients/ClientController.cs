@@ -13,7 +13,7 @@ public class ClientController : MonoBehaviour
     public bool isInfected;
     public float minTimeToBuyAnItem = 2f;
     public float maxTimeToBuyAnItem = 4f;
-    public float distanceToReachANode = 1f;
+    public float distanceToReachANode = 0.2f;
 
     [Header("Components to setup")]
     public CharAnimationController myAnim;
@@ -21,9 +21,11 @@ public class ClientController : MonoBehaviour
 
     protected bool itemPickedUp=false;
 
+    protected int indexForDirector=-1;
     protected PathToFollow myPath;
     protected int currNextNodeIndex;
     protected bool isMoving;
+    protected AIDirector myDir;
 
     /// <summary>
     /// Method called to reset the client pick up
@@ -40,6 +42,7 @@ public class ClientController : MonoBehaviour
     /// <param name="newPosition"></param>
     public void Reposition(Vector3 newPosition)
     {
+        gameObject.SetActive(false);
         transform.position = newPosition;
     }
 
@@ -48,17 +51,26 @@ public class ClientController : MonoBehaviour
     {
         isMoving = false;
         myRB.velocity = Vector2.zero;
+        gameObject.SetActive(false);
     }
 
     /// <summary>
     /// Called by the AI direction when it needs the player back in the game after it was out of the game
     /// </summary>
     /// <param name="myNewPath"></param>
-    public void StartMoving(PathToFollow myNewPath)
+    public void StartMoving(PathToFollow myNewPath,int index, AIDirector dir)
     {
+        if (myDir == null)
+            myDir = dir;
+        
+        indexForDirector = index;
         myPath = myNewPath;
         currNextNodeIndex = 0;
         isMoving = true;
+        itemPickedUp = false;
+
+        gameObject.SetActive(true);
+        StopAllCoroutines();
         StartCoroutine(ClientBehaviour());
     }
 
@@ -71,7 +83,8 @@ public class ClientController : MonoBehaviour
     protected void PickUpItem(SectionManager section)
     {
         Debug.Log("ItemPicked");
-        //section.TakeItem();
+        if(section)
+            section.TakeItem();
     }
 
     /// <summary>
@@ -97,33 +110,37 @@ public class ClientController : MonoBehaviour
     {
         Vector2 dir;
         float timeToWait;
-        while (isMoving && currNextNodeIndex < myPath.nodes.Length)
+        while (isMoving &&myPath!=null && currNextNodeIndex < myPath.nodes.Length)
         {
             dir = myPath.nodes[currNextNodeIndex].transform.position - transform.position;
             // reach the current node
-            while (dir.magnitude > distanceToReachANode)
+            while (dir.magnitude >= distanceToReachANode)
             {
-                myRB.velocity = dir.normalized * movSpeed * Time.deltaTime;
+                //Debug.Log($"Distance: {dir.magnitude}");
+                myRB.velocity = dir.normalized * movSpeed*Time.deltaTime;
+                if (myAnim)
+                    myAnim.UpdateCharacterAnimation(myRB.velocity.sqrMagnitude, myRB.velocity.y > 0);
                 yield return null;
+                dir = myPath.nodes[currNextNodeIndex].transform.position - transform.position;
             }
-
+            Debug.Log("Reached Node!");
             myRB.velocity = Vector2.zero;
             // if it is not the last one in the path (that is the exit
             if (currNextNodeIndex < myPath.nodes.Length - 1)
             {
                 // do a wait if asked
                 timeToWait = NodeReached();
-                yield return new WaitForSeconds(timeToWait);
+                yield return new WaitForSeconds(timeToWait+Random.Range(-0.5f, 0.5f));
                 currNextNodeIndex++;
             }
             else
             {
                 //Call the AI directon to tell that we reached the exit
+                myDir.RestartClient(indexForDirector);
+                isMoving = false;
             }
         }
     }
-
-
 }
 
 public enum ClientState

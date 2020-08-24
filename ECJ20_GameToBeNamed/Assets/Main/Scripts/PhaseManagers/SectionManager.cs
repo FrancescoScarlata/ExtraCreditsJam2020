@@ -15,6 +15,9 @@ public class SectionManager : MonoBehaviour
     [Header("This should have the same amount as maxItem")]
     public GameObject[] spritesShown;
     public bool isInPromo = false; // don't know if this s still usefull
+
+    public SimpleFMODAudioSource mySfxSource;
+
     public bool IsEmpty
     {
         get { return numOfItemRemaning <= 0; }
@@ -28,7 +31,7 @@ public class SectionManager : MonoBehaviour
         numOfItemRemaning = maxItems;
         foreach(GameObject sprite in spritesShown)
         {
-            //sprite.SetActive(true); TO ADD!
+            sprite.SetActive(true);
         }
 
     }
@@ -46,6 +49,7 @@ public class SectionManager : MonoBehaviour
             if (spritesShown[numOfItemRemaning])
                 spritesShown[numOfItemRemaning].SetActive(false);
 
+            mySfxSource.Play();
             // some animation here on the item taken
             return myItem;
         }

@@ -14,6 +14,7 @@ public abstract class _Interactions : MonoBehaviour {
     public string messageToSayWhenInteracting;
 
     public GameObject hintButtonInteraction;
+    public SimpleFMODAudioSource sfxOnInteraction;
 
     protected Collider2D coll;
 

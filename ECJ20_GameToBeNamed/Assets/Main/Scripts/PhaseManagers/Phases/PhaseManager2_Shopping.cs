@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 
@@ -8,16 +9,15 @@ using UnityEngine;
 /// </summary>
 public class PhaseManager2_Shopping : _PhaseManager
 {
-    // Timer Text
+    public GameObject timerObjects;
+    public TextMeshProUGUI timer;
 
-    // public AIDirector
-
-    protected DayInfo thisDayInfos;
+    public AIDirector AIDir;
 
     public Transform player;
-
     public Transform entranceTransform;
 
+    protected DayInfo thisDayInfos;
     WaitForSeconds waitASec = new WaitForSeconds(1);
 
     public override void StartPhase()
@@ -39,11 +39,13 @@ public class PhaseManager2_Shopping : _PhaseManager
         player.position = entranceTransform.position;
 
         //Initialize the People with the positioning etc -> TO DO the AI director etc
+        AIDir.InitializeDirector(thisDayInfos);
 
         UIManager.instance.FadeIn();
         GameManager.instance.mListUIMan.InitializeMarketList(GameManager.instance.sMList);
         yield return new WaitForSeconds(1.2f);
 
+        timerObjects.SetActive(thisDayInfos.isTimerOn);
         if (thisDayInfos.isTimerOn)
         {
             // Start Timer
@@ -71,8 +73,8 @@ public class PhaseManager2_Shopping : _PhaseManager
         while (time > 0)
         {
             time -= 1;
-            yield return waitASec;  
-            // Text display time remaining in a legible way
+            yield return waitASec;
+            timer.text = $" {Mathf.FloorToInt( time/60)} : {time%60}";
         }
         //Timer is ended
         GameManager.instance.NextPhase();
@@ -83,6 +85,7 @@ public class PhaseManager2_Shopping : _PhaseManager
     IEnumerator EndPhaseWithPauses()
     {
         UIManager.instance.FadeIn();
+        AIDir.HideClients();
         // stop the AI from moving
         yield return new WaitForSeconds(1.2f);
         
