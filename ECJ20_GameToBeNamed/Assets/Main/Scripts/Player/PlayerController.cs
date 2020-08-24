@@ -43,14 +43,14 @@ public class PlayerController : MonoBehaviour
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), 
             Input.GetAxisRaw("Vertical"));
 
-        if(movement.x < 0)
-        {
-            sprRend.flipX = true;
-        }
-        else if(movement.x > 0)
-        {
-            sprRend.flipX = false;
-        }
+       // if(movement.x < 0)
+       // {
+       //     sprRend.flipX = true;
+       //}
+       //else if(movement.x > 0)
+       //{
+       //     sprRend.flipX = false;
+       // }
 
         if (Input.GetButtonDown("Interact") && interactible != null)
         {
