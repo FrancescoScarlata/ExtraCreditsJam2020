@@ -38,7 +38,8 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(FadeTo(0f, fadeTime));
 
-        GameManager.instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
+        if(!isMainMenu)
+            GameManager.instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
     }
 
     private void Update()
