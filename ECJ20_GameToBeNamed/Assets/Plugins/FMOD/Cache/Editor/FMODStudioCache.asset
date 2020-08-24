@@ -122,7 +122,7 @@ MonoBehaviour:
   guid: 1923feb515aeb0429deffa331ce06659
   Banks:
   - {fileID: -8244974424205830976}
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -219,6 +219,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-7101217953375503226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Non_player.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Non_player.bank
+  SubDir: 
+  lastModified: 637338278747120880
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-6958236823648180489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,12 +288,12 @@ MonoBehaviour:
   Path: event:/Music_fades
   guid: 9e92e9640ca2784e87de6dc87c9fbbce
   Banks:
-  - {fileID: -6254386467185552261}
+  - {fileID: 2121623319453588254}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -4452234351171995655}
+  - {fileID: 188143902364883856}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -310,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../ECJ20_FmodProject/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637338893403737700
+  lastModified: 637338817131659137
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -385,7 +403,7 @@ MonoBehaviour:
   Path: event:/Sneeze
   guid: 32900321fe4a7e4aa5b495732d3f781c
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -408,7 +426,7 @@ MonoBehaviour:
   Path: event:/Store Item/Meat
   guid: c0a54da90b0ead4eb8e5e457a24d2f44
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -468,6 +486,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-4833164907376036051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Reverb
+  m_EditorClassIdentifier: 
+  Name: Reverb
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-4576148994277379062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +571,7 @@ MonoBehaviour:
   Path: event:/Store Item/Milk
   guid: e97e90027c6475459c3bbcb31b4a8170
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -577,7 +612,7 @@ MonoBehaviour:
   Path: event:/UI/UI_Back
   guid: 3b7b42a005dd3749b0a687a0ffa04490
   Banks:
-  - {fileID: 3126477443424076211}
+  - {fileID: 1162193323516544895}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -600,7 +635,7 @@ MonoBehaviour:
   Path: event:/Put_down
   guid: fc7deab6551cd649b161314576b396dc
   Banks:
-  - {fileID: 8671881400235279411}
+  - {fileID: 881313526316907895}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -623,7 +658,7 @@ MonoBehaviour:
   Path: event:/Store Item/Fish
   guid: ab031896f877fe41b238f49c739c5e70
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -646,7 +681,7 @@ MonoBehaviour:
   Path: event:/HomeMusic
   guid: 578015a752ce1340b7e5253ad995ddb9
   Banks:
-  - {fileID: -6254386467185552261}
+  - {fileID: 2121623319453588254}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -672,6 +707,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-3611290583204870013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EventTest/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: -12
+  Max: 12
+  Default: 0
+  Exists: 1
 --- !u!114 &-3565360423012293313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,7 +775,7 @@ MonoBehaviour:
   Path: event:/Store Item/Soap
   guid: 31d895aed298194ebc28dedadef5dd1c
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -746,7 +798,7 @@ MonoBehaviour:
   Path: event:/MarketMusic
   guid: 3637bc55f3fe754a8545af3a8f251e0e
   Banks:
-  - {fileID: -6254386467185552261}
+  - {fileID: 2121623319453588254}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -822,7 +874,7 @@ MonoBehaviour:
   Path: event:/Newspaper
   guid: 72ab73c56291c84fa6971e948f3cbb80
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -897,7 +949,7 @@ MonoBehaviour:
   Path: event:/Footsteps
   guid: cc5b3589cc0afd48ac525c7c18ae51c1
   Banks:
-  - {fileID: 8671881400235279411}
+  - {fileID: 881313526316907895}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -905,6 +957,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 307
+--- !u!114 &-2015638942921053840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/TestBank.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/TestBank.bank
+  SubDir: 
+  lastModified: 637337329935171588
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2005287549595862673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,7 +1096,7 @@ MonoBehaviour:
   Path: event:/End_Till
   guid: 853d35cf5215d944b543f27515f8a448
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1102,7 +1172,7 @@ MonoBehaviour:
   Path: event:/MenuMusic
   guid: 08d8f66216ec58429bfc54a0382a917e
   Banks:
-  - {fileID: -6254386467185552261}
+  - {fileID: 2121623319453588254}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1145,6 +1215,24 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-1003845278358924188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637337329934911743
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-993593638091049969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,7 +1284,7 @@ MonoBehaviour:
   Path: event:/Store Item/Chocolate
   guid: a258fd88c2366547b6c0e30528fcfac5
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1289,12 +1377,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6267068562860840968}
-  - {fileID: -5053931441306245220}
-  - {fileID: -6254386467185552261}
-  - {fileID: -8873834759477244425}
-  - {fileID: 8671881400235279411}
-  - {fileID: 3987352631423607669}
-  - {fileID: 3126477443424076211}
+  - {fileID: -1003845278358924188}
+  - {fileID: 2121623319453588254}
+  - {fileID: -7101217953375503226}
+  - {fileID: 881313526316907895}
+  - {fileID: -2015638942921053840}
+  - {fileID: 1162193323516544895}
   EditorEvents:
   - {fileID: 5649790544065804434}
   - {fileID: -3251743387262940660}
@@ -1325,13 +1413,30 @@ MonoBehaviour:
   - {fileID: -4142579131210009389}
   - {fileID: -6886845315986476322}
   EditorParameters:
-  - {fileID: 271447485346728512}
+  - {fileID: -4833164907376036051}
   MasterBanks:
-  - {fileID: -5053931441306245220}
+  - {fileID: -1003845278358924188}
   StringsBanks:
   - {fileID: -6267068562860840968}
-  stringsBankWriteTime: 637338893403737700
+  stringsBankWriteTime: 637338817131659137
   cacheVersion: 3
+--- !u!114 &188143902364883856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_fades/HomeOrShop
+  m_EditorClassIdentifier: 
+  Name: HomeOrShop
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &271447485346728512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,7 +1469,7 @@ MonoBehaviour:
   Path: event:/Store Item/Bread
   guid: 087c61462ba6b84db7defc4366e84a14
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1387,7 +1492,7 @@ MonoBehaviour:
   Path: event:/Store Item/Fruit
   guid: 55fae4b0ec15164aa5dd30e54d02633b
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1412,6 +1517,24 @@ MonoBehaviour:
   Max: 12
   Default: 0
   Exists: 0
+--- !u!114 &881313526316907895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Player.bank
+  SubDir: 
+  lastModified: 637338817131679126
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1097323997581630429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,6 +1571,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &1162193323516544895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/UI.bank
+  SubDir: 
+  lastModified: 637337329935321492
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1301854950272585047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1463,7 +1604,7 @@ MonoBehaviour:
   Path: event:/UI/UI_Accept
   guid: 4f5f544fd700f54ebc18620037ea81f6
   Banks:
-  - {fileID: 3126477443424076211}
+  - {fileID: 1162193323516544895}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1523,6 +1664,24 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &2121623319453588254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../ECJ20_FmodProject/Build/Desktop/Music.bank
+  SubDir: 
+  lastModified: 637338859634356137
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2165387389592381670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,7 +1859,7 @@ MonoBehaviour:
   Path: event:/Store Item/ToiletPaper
   guid: 6a8f8ced9bb0f84ebb539da5eb457623
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1723,7 +1882,7 @@ MonoBehaviour:
   Path: event:/Store Item/Medicine
   guid: 7c0032c3e355f94b92d7dc95070ecd55
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1782,7 +1941,7 @@ MonoBehaviour:
   Path: event:/Store Item/Salt
   guid: bdc5e2189d3a3f4f8aa9edec07c0c5f1
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1876,12 +2035,12 @@ MonoBehaviour:
   Path: event:/Tests/EventTest
   guid: b15ac0e2b29398458719118509b058d9
   Banks:
-  - {fileID: 3987352631423607669}
+  - {fileID: -2015638942921053840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -2872870786082337918}
+  - {fileID: -3611290583204870013}
   MinDistance: 0
   MaxDistance: 0
   Length: 1712
@@ -1918,7 +2077,7 @@ MonoBehaviour:
   Path: event:/Store Item/Eggs
   guid: b25c63440e1b6146a62561e05994c3eb
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1995,7 +2154,7 @@ MonoBehaviour:
   Path: event:/Store Item/Beans
   guid: 615f1e233ebef94bb7a2d8dd9d8dfbf0
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2159,7 +2318,7 @@ MonoBehaviour:
   Path: event:/Cough
   guid: f94c18e5a09d054481e267ec61cd1b5e
   Banks:
-  - {fileID: -8873834759477244425}
+  - {fileID: -7101217953375503226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2182,7 +2341,7 @@ MonoBehaviour:
   Path: event:/Pick_up
   guid: ddc9e710b223604fa0fe554894dbbad7
   Banks:
-  - {fileID: 8671881400235279411}
+  - {fileID: 881313526316907895}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2223,7 +2382,7 @@ MonoBehaviour:
   Path: event:/UI/UI_Click
   guid: f22874f18205774386e7c5fdbd492856
   Banks:
-  - {fileID: 3126477443424076211}
+  - {fileID: 1162193323516544895}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

@@ -30,9 +30,9 @@ public class CharAnimationController : MonoBehaviour
         if (isGoingUp != newIsGoingUp)
         {
             if(newIsGoingUp)
-            {
-                upFace.SetActive(true);
+            {               
                 downFace.SetActive(false);
+                upFace.SetActive(true);
             }
             else
             {

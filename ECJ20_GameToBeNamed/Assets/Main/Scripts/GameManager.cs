@@ -159,6 +159,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Days finished! Go to the ending scene");
                 // finish game / ending scene
+                SceneManager.LoadScene("02_GameOver");
             }
         }
         else

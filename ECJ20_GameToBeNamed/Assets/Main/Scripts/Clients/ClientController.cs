@@ -18,6 +18,8 @@ public class ClientController : MonoBehaviour
     [Header("Components to setup")]
     public CharAnimationController myAnim;
     public Rigidbody2D myRB;
+    public SimpleFMODAudioSource cough;
+    public SimpleFMODAudioSource sneeze;
 
     protected bool itemPickedUp=false;
 
@@ -98,7 +100,7 @@ public class ClientController : MonoBehaviour
             PickUpItem(myPath.nodes[currNextNodeIndex].mySection);
             return Random.Range(minTimeToBuyAnItem, maxTimeToBuyAnItem);
         }
-
+        
         return myPath.nodes[currNextNodeIndex].timeToWaitInThisNode;
     }
 
@@ -129,6 +131,17 @@ public class ClientController : MonoBehaviour
             if (currNextNodeIndex < myPath.nodes.Length - 1)
             {
                 // do a wait if asked
+                if (isInfected) {
+
+                    if(Random.Range(0, 2) % 2 == 0)
+                    {
+                        cough.Play();
+                    }
+                    else
+                        sneeze.Play();
+
+                }
+                    
                 timeToWait = NodeReached();
                 yield return new WaitForSeconds(timeToWait+Random.Range(-0.5f, 0.5f));
                 currNextNodeIndex++;
