@@ -74,6 +74,7 @@ public class PhaseManager2_Shopping : _PhaseManager
         {
             time -= 1;
             yield return waitASec;
+            Debug.Log("rest: " + time % 60);
             timer.text = $" {Mathf.FloorToInt( time/60)} : {time%60}";
         }
         //Timer is ended

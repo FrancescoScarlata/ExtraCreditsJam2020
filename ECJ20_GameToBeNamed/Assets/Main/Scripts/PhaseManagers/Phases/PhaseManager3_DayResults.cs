@@ -97,6 +97,7 @@ public class PhaseManager3_DayResults : _PhaseManager
                     int phraseToSay = Random.Range(0, familyFeedbacks[0].reactions.infectionPhrasesSeparated1.Length);
                     playerInfectionResultText.text = familyFeedbacks[0].reactions.infectionPhrasesSeparated1[phraseToSay] +
                                         members[i].myID.ToString() + familyFeedbacks[0].reactions.infectionPhrasesSeparated2[phraseToSay];
+                    break;
                 }
 
             }
@@ -111,6 +112,7 @@ public class PhaseManager3_DayResults : _PhaseManager
                         int phraseToSay = Random.Range(0, familyFeedbacks[0].reactions.deadPhrasesSep1.Length);
                         playerInfectionResultText.text = familyFeedbacks[0].reactions.deadPhrasesSep1[phraseToSay] +
                                         members[i].myID.ToString() + familyFeedbacks[0].reactions.deadPhrasesSep2[phraseToSay];
+                        break;
                     }
 
                 }
