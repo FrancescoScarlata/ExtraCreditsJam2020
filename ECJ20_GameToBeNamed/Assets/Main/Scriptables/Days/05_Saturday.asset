@@ -22,4 +22,4 @@ MonoBehaviour:
   sectionsToRestock: 000000000000000000000000
   sectionsWithPromos: 010100000000010100000000
   isTimerOn: 1
-  secondsOfTimer: 180
+  secondsOfTimer: 60

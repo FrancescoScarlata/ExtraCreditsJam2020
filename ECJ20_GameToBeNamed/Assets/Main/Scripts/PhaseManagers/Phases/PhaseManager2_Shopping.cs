@@ -20,6 +20,9 @@ public class PhaseManager2_Shopping : _PhaseManager
     protected DayInfo thisDayInfos;
     WaitForSeconds waitASec = new WaitForSeconds(1);
 
+    protected Coroutine timerRoutine;
+    protected bool isPhase2Active = false;
+
     public override void StartPhase()
     {
         StartCoroutine(StartPhaseWithPauses());
@@ -49,7 +52,10 @@ public class PhaseManager2_Shopping : _PhaseManager
         if (thisDayInfos.isTimerOn)
         {
             // Start Timer
-            StartCoroutine(StartTimer(thisDayInfos.secondsOfTimer + 5));// just to give 5 seconds more, but probably it's not necessary
+            if (timerRoutine != null)
+                StopCoroutine(timerRoutine);
+            isPhase2Active = true;
+            timerRoutine=StartCoroutine(StartTimer(thisDayInfos.secondsOfTimer));// just to give 5 seconds more, but probably it's not necessary
         }
 
         //Enable player controller, otherwise it can start moving first ?
@@ -58,8 +64,11 @@ public class PhaseManager2_Shopping : _PhaseManager
 
     public override void EndPhase()
     {
+        isPhase2Active = false;
         StartCoroutine(EndPhaseWithPauses());
-
+        
+        if (timerRoutine != null)
+            StopCoroutine(timerRoutine);
     }
 
     /// <summary>
@@ -77,8 +86,12 @@ public class PhaseManager2_Shopping : _PhaseManager
             Debug.Log("rest: " + time % 60);
             timer.text = $" {Mathf.FloorToInt( time/60)} : {time%60}";
         }
-        //Timer is ended
-        GameManager.instance.NextPhase();
+        if (isPhase2Active) // if not, it means that it passed using the counter 
+        {
+            //Timer is ended
+            GameManager.instance.NextPhase();
+        }
+        
     }
 
 

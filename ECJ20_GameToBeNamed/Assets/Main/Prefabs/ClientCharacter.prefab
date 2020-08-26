@@ -807,8 +807,8 @@ MonoBehaviour:
   distanceToReachANode: 1
   myAnim: {fileID: 1410166223539607207}
   myRB: {fileID: 2561608231762202370}
-  cough: {fileID: 0}
-  sneeze: {fileID: 0}
+  cough: {fileID: 1352729673084223633}
+  sneeze: {fileID: 249260865105627884}
 --- !u!114 &1410166223539607207
 MonoBehaviour:
   m_ObjectHideFlags: 0
