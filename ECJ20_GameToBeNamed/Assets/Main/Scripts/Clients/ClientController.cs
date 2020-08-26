@@ -14,6 +14,7 @@ public class ClientController : MonoBehaviour
     public float minTimeToBuyAnItem = 2f;
     public float maxTimeToBuyAnItem = 4f;
     public float distanceToReachANode = 0.2f;
+    public Color infectedColor=Color.green;
 
     [Header("Components to setup")]
     public CharAnimationController myAnim;
@@ -100,7 +101,20 @@ public class ClientController : MonoBehaviour
             PickUpItem(myPath.nodes[currNextNodeIndex].mySection);
             return Random.Range(minTimeToBuyAnItem, maxTimeToBuyAnItem);
         }
-        
+        // do a wait if asked // here because the bluish looks bad for a long period of time
+        if (isInfected)
+        {
+
+            if (Random.Range(0, 2) % 2 == 0)
+            {
+                cough.Play();
+            }
+            else
+                sneeze.Play();
+
+            myAnim.TurnBluish(infectedColor);
+        }
+
         return myPath.nodes[currNextNodeIndex].timeToWaitInThisNode;
     }
 
@@ -130,20 +144,12 @@ public class ClientController : MonoBehaviour
             // if it is not the last one in the path (that is the exit
             if (currNextNodeIndex < myPath.nodes.Length - 1)
             {
-                // do a wait if asked
-                if (isInfected) {
-
-                    if(Random.Range(0, 2) % 2 == 0)
-                    {
-                        cough.Play();
-                    }
-                    else
-                        sneeze.Play();
-
-                }
+               
                     
                 timeToWait = NodeReached();
                 yield return new WaitForSeconds(timeToWait+Random.Range(-0.5f, 0.5f));
+                if(isInfected)
+                    myAnim.TurnBackNormal();
                 currNextNodeIndex++;
             }
             else

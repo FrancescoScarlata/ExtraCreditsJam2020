@@ -86,7 +86,7 @@ public class PlayerInfectionController : MonoBehaviour
         if (Random.Range(0, 1f) <= chance)
         {
             GameManager.instance.PlayerInfection();
-            Debug.Log($"Infected! with {chance*100}%");
+            Debug.Log($"Infected! with {(int)(chance*100)}%");
         }
     }
 

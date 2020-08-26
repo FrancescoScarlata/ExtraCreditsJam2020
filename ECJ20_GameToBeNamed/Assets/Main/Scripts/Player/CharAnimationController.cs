@@ -45,4 +45,25 @@ public class CharAnimationController : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Just a feedback "animation" to give feedback on who is infected and who isn't
+    /// </summary>
+    /// <param name="infectedColor"></param>
+    public void TurnBluish(Color infectedColor)
+    {
+        upFace.GetComponent<SpriteRenderer>().color = infectedColor;
+        downFace.GetComponent<SpriteRenderer>().color = infectedColor;
+    }
+
+
+    /// <summary>
+    /// Just a feedback "animation" to give feedback on who is infected and who isn't
+    /// </summary>
+    /// <param name="infectedColor"></param>
+    public void TurnBackNormal()
+    {
+        upFace.GetComponent<SpriteRenderer>().color = Color.white;
+        downFace.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
 }

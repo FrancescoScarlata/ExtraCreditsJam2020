@@ -166,7 +166,7 @@ public class PhaseManager3_DayResults : _PhaseManager
         }
 
         UIManager.instance.FadeIn();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
 
         continueButton.gameObject.SetActive(true);
 

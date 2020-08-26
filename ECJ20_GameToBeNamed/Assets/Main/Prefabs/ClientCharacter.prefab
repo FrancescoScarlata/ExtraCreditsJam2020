@@ -805,6 +805,7 @@ MonoBehaviour:
   minTimeToBuyAnItem: 2
   maxTimeToBuyAnItem: 4
   distanceToReachANode: 1
+  infectedColor: {r: 0.33193302, g: 0.54872507, b: 0.7924528, a: 1}
   myAnim: {fileID: 1410166223539607207}
   myRB: {fileID: 2561608231762202370}
   cough: {fileID: 1352729673084223633}
