@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
         {
             resultPickUp= sMList.PickUpItem(newItem);
             //update the supermarket UI list in some way
-            if (resultPickUp > 0)
+            if (resultPickUp >= 0)
                 mListUIMan.UpdateUIList(newItem.myType);
         }
         else

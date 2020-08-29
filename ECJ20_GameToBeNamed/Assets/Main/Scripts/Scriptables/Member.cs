@@ -17,7 +17,8 @@ public class Member : ScriptableObject
     public FamilyID myID;
     public MemberState myState = MemberState.normal;
 
-    public Item [] itemsICanAskFor; 
+    public Item [] itemsICanAskFor;
+    public Item medicineItem;
 
     List<Item> itemsAskedThisRound= new List<Item>();
     List<Item> itemsAskedAndNotBought= new List<Item>();
@@ -47,6 +48,8 @@ public class Member : ScriptableObject
             // take an item from the list of items available to this member
             itemsAskedThisRound.Add(itemsICanAskFor[Random.Range(0, itemsICanAskFor.Length)]);
         }
+        if (myState == MemberState.infected)
+            itemsAskedThisRound.Add(medicineItem);
     }
 
     /// <summary>

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDateToShow: Oct 15th
   newsPaperOfTheDay: {fileID: 21300000, guid: 3fb4697e7be7bec4c8a3335ec535e6bb, type: 3}
-  memberActive: 01010000
+  memberActive: 01010100
   minNumOfItemsAsked: 1
   maxNumOfItemsAsked: 4
   amountOfPeople: 15

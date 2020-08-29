@@ -26,3 +26,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 802c2f07e9d7d4346869ffffaca1d196, type: 2}
   - {fileID: 11400000, guid: fe14b294680e9a245b5cefae18c07a12, type: 2}
   - {fileID: 11400000, guid: 6c6ad79f183484f428839bde6d32a98b, type: 2}
+  medicineItem: {fileID: 11400000, guid: 903bf4651a701bb4482d762a326179be, type: 2}
