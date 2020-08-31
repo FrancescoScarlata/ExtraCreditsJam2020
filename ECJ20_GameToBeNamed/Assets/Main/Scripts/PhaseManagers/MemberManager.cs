@@ -17,6 +17,7 @@ public class MemberManager : MonoBehaviour
     public Image memberImage;
     public GameObject listOfTheDay;
     public Image[] itemIconsInDaily;
+    public GameObject prevListBG;
     public GameObject listOfPreviousItems;
     public Image[] itemIconsInPrevious;
 
@@ -66,6 +67,7 @@ public class MemberManager : MonoBehaviour
             item.enabled = false;
         }
         // hides the object with the previous items
+        prevListBG.SetActive(false);
         listOfPreviousItems.SetActive(false);
     }
 
@@ -95,7 +97,7 @@ public class MemberManager : MonoBehaviour
         List<Item> prevItems = myMember.GetPrevItems();
         if (prevItems.Count == 0)
             return;
-
+        prevListBG.SetActive(true);
         listOfPreviousItems.SetActive(true);
 
         for (int i = 0; i < prevItems.Count; i++)

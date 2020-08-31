@@ -85,7 +85,7 @@ public class ClientController : MonoBehaviour
     /// <param name="section"></param>
     protected void PickUpItem(SectionManager section)
     {
-        Debug.Log("ItemPicked");
+        //Debug.Log("ItemPicked");
         if(section)
             section.TakeItem();
     }

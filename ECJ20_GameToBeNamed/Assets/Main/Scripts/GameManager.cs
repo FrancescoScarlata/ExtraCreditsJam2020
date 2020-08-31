@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
         {
             member.myMember.NewGame(); // this will clear the item lists, so that no item will be there
         }
+        sMList.ClearListEndDay();
         currPhase = 0;
         currDay = 0;
         phases[currPhase].StartPhase();

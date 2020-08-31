@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     // Execute movement
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
 
         // Could instead do rb.velocity for a bit of a ramp-up to speed, not sure which feels better?
     }
