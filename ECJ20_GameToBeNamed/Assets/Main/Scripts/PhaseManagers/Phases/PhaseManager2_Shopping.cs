@@ -48,7 +48,7 @@ public class PhaseManager2_Shopping : _PhaseManager
         GameManager.instance.mListUIMan.InitializeMarketList(GameManager.instance.sMList);
         yield return new WaitForSeconds(1.2f);
 
-        timerObjects.SetActive(thisDayInfos.isTimerOn);
+       
         if (thisDayInfos.isTimerOn)
         {
             // Start Timer
@@ -57,6 +57,7 @@ public class PhaseManager2_Shopping : _PhaseManager
             isPhase2Active = true;
             timerRoutine=StartCoroutine(StartTimer(thisDayInfos.secondsOfTimer));// just to give 5 seconds more, but probably it's not necessary
         }
+        timerObjects.SetActive(thisDayInfos.isTimerOn);
 
         //Enable player controller, otherwise it can start moving first ?
     }
@@ -78,7 +79,7 @@ public class PhaseManager2_Shopping : _PhaseManager
     /// <returns></returns>
     protected IEnumerator StartTimer(float time)
     {
- 
+        timer.text = $" { Mathf.FloorToInt(time / 60)} : { time % 60}"; // initialize the text
         while (time > 0)
         {
             time -= 1;

@@ -13,13 +13,12 @@ public class SectionInteraction : _Interactions
     {
         // call the game manager to add my section item in the supermarket list
 
-        Debug.Log("Interaction is happening. Yay.");
         if (!mySection.IsEmpty)
         {
             if(GameManager.instance.sMList.GetGeneralList().Count > GameManager.instance.sMList.numOfItemTaken)
             {  
                 GameManager.instance.InsertItem(mySection.TakeItem());
-                Debug.Log("Interaction succeeded.");
+                //Debug.Log("Interaction succeeded.");
             }
             
         }

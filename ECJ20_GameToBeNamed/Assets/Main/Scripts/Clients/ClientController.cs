@@ -139,7 +139,7 @@ public class ClientController : MonoBehaviour
                 yield return null;
                 dir = myPath.nodes[currNextNodeIndex].transform.position - transform.position;
             }
-            Debug.Log("Reached Node!");
+            //Debug.Log("Reached Node!");
             myRB.velocity = Vector2.zero;
             // if it is not the last one in the path (that is the exit
             if (currNextNodeIndex < myPath.nodes.Length - 1)

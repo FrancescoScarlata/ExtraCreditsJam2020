@@ -17,6 +17,8 @@ public class CounterInteraction : _Interactions
         Debug.Log("End phase!");
         if (lastTImeInteracted+2<Time.time)
         {
+            if(sfxOnInteraction)
+                sfxOnInteraction.Play();
             lastTImeInteracted = Time.time;
             // this will stop the phase, make a fade and then call the next phase [to do]
             GameManager.instance.NextPhase();
